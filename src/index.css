@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --color-brand-50: #f3fbff;
+  --color-brand-100: #d9f1ff;
+  --color-brand-300: #71c9ef;
+  --color-brand-500: #149dd8;
+  --color-brand-700: #0f5f8a;
+  --color-ink-950: #0b1526;
+  --color-ink-800: #1d3557;
+  --color-ink-600: #4d5f7c;
+  --color-line: rgba(14, 36, 68, 0.1);
+  --color-surface: rgba(255, 255, 255, 0.78);
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-brand-50 text-ink-950 antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(20, 157, 216, 0.18), transparent 34%),
+      radial-gradient(circle at top right, rgba(113, 201, 239, 0.18), transparent 28%),
+      linear-gradient(180deg, #f9fdff 0%, #eef7fb 100%);
+  }
+
+  a {
+    @apply text-inherit no-underline transition duration-300 ease-out;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@utility page-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+@utility panel {
+  @apply rounded-[28px] border border-white/60 bg-white/75 shadow-[0_18px_60px_rgba(11,21,38,0.08)] backdrop-blur-sm;
+}
+
+@utility interactive-lift {
+  @apply transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(11,21,38,0.12)];
+}
+
+@utility section-space {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-page-enter {
+  animation: page-enter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
