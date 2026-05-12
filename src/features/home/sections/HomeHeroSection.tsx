@@ -81,28 +81,25 @@ export function HomeHeroSection() {
             initial={{ opacity: 0, x: -34 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.95, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-[42rem] text-[0.98rem] font-semibold leading-[1.42] text-white sm:text-[1.02rem]"
+            className="mt-6 max-w-[43rem] text-[0.96rem] font-semibold leading-[1.5] text-white sm:text-[1rem]"
           >
-            En Fil-on Tech impulsamos la transformación del ecosistema
-            agrominero con soluciones financieras y tecnológicas que facilitan
-            la comercialización, la inversión y el acceso a nuevos mercados.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, x: -28 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.92, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 max-w-[42rem] text-[0.98rem] font-semibold leading-[1.42] text-white sm:text-[1.02rem]"
-          >
-            Unimos innovación, seguridad y visión estratégica para desarrollar
-            herramientas que fortalezcan la operación, mejoren la trazabilidad
-            y generen crecimiento sostenible en Latinoamérica.
+            En Fil-On creemos en el movimiento real de la economía: en las
+            industrias estratégicas que impulsan países, transforman
+            territorios y generan oportunidades donde otros no llegan. Por eso
+            llevamos soluciones financieras y tecnología al corazón de la
+            operación, conectando capital, inteligencia y ejecución con
+            velocidad, control y confianza. Transformamos la complejidad en
+            decisiones simples, la distancia en presencia real y el riesgo en
+            operaciones más seguras y transparentes. No somos solo una fintech;
+            somos infraestructura para el crecimiento de la economía real en
+            Latinoamérica, porque la confianza no se construye con promesas,
+            sino en el territorio, todos los días.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.54, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mt-9"
           >
             <Link

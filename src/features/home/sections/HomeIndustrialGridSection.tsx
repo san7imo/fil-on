@@ -14,11 +14,14 @@ const cards = [
   {
     title: 'Capital',
     description:
-      'Gestión inteligente de capital y liquidez para el sector agrominero.',
-    className: 'min-h-[12rem] lg:min-h-0',
+      'Liquidez, tecnología y cumplimiento integrados para operar con control y trazabilidad.',
+    className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
-      'bottom-[-0.15rem] left-7 text-[5.2rem] tracking-[-0.08em] lg:text-[5.8rem]',
-    contentClassName: 'absolute left-7 top-6 max-w-[15.8rem] lg:max-w-[16.4rem]',
+      'bottom-1 left-7 text-[4.15rem] tracking-[-0.08em] lg:text-[4.7rem]',
+    contentClassName:
+      'absolute left-[58%] right-6 top-1/2 max-w-[10.4rem] -translate-y-1/2 text-left lg:left-[56%] lg:right-8 lg:max-w-[11.2rem]',
+    descriptionClassName:
+      'text-[0.88rem] font-bold leading-[1.08] tracking-[-0.025em] sm:text-[0.93rem] lg:text-[0.82rem]',
   },
   {
     title: 'Tech',
@@ -26,20 +29,24 @@ const cards = [
       'Soluciones de tecnología financiera y de gestión para potenciar el sector agrominero.',
     className: 'min-h-[17rem] lg:min-h-0',
     titleClassName:
-      'left-6 top-4 text-[5.05rem] tracking-[-0.08em] lg:text-[5.8rem]',
+      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[4.95rem]',
     contentClassName:
-      'absolute left-[8.3rem] top-[8.8rem] right-6 max-w-[18.8rem] lg:left-[8.5rem] lg:top-[9.2rem] lg:max-w-[19.4rem]',
+      'absolute left-[7.3rem] top-[7.6rem] right-6 max-w-[18rem] lg:left-[7.8rem] lg:top-[8.2rem] lg:max-w-[18.5rem]',
+    descriptionClassName:
+      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
   },
   {
     title: 'Guardian',
     description:
       'Lab de innovación que integra minería, agroindustria y tecnología.',
-    className: 'row-span-2 min-h-[28rem] overflow-hidden lg:min-h-0 lg:row-span-2',
+    className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
-      'left-5 top-7 text-[4.2rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] lg:text-[5.1rem]',
+      'left-4 top-1/2 -translate-y-1/2 text-[3.65rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] lg:text-[4.5rem]',
     contentClassName: '',
     hasCardsImage: true,
     isGuardianCard: true,
+    descriptionClassName:
+      'text-[0.94rem] font-bold leading-[1.05] tracking-[-0.03em] sm:text-[1rem] lg:text-[0.86rem]',
   },
   {
     title: 'Legal',
@@ -47,15 +54,28 @@ const cards = [
       'Cumplimiento inteligente que asegura la viabilidad de la innovación.',
     className: 'min-h-[12rem] lg:min-h-0',
     titleClassName:
-      'bottom-[-0.1rem] right-5 text-[4.9rem] tracking-[-0.08em] lg:text-[5.55rem]',
+      'bottom-1 right-5 text-[4rem] tracking-[-0.08em] lg:text-[4.65rem]',
     contentClassName: 'absolute left-6 top-5 max-w-[14.9rem] lg:max-w-[15.4rem]',
+    descriptionClassName:
+      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
+  },
+  {
+    title: 'Secure',
+    description:
+      'Infraestructura jurídica y regulatoria para escalar con seguridad, control y cumplimiento inteligente.',
+    className: 'min-h-[11.6rem] lg:min-h-0',
+    titleClassName:
+      'bottom-1 right-5 text-[3.45rem] tracking-[-0.08em] lg:text-[4.05rem]',
+    contentClassName: 'absolute left-6 right-6 top-5 max-w-[16.8rem] lg:right-8 lg:max-w-[17.2rem]',
+    descriptionClassName:
+      'text-[0.88rem] font-bold leading-[1.08] tracking-[-0.025em] sm:text-[0.93rem] lg:text-[0.82rem]',
   },
   {
     title: 'MOVI\nMIENTO',
     description: '',
     className: 'min-h-[11.8rem] justify-end lg:min-h-0',
     titleClassName:
-      'left-5 top-4 whitespace-pre-line text-[4.55rem] leading-[0.88] tracking-[-0.08em] lg:text-[5.45rem]',
+      'left-5 top-5 whitespace-pre-line text-[3.75rem] leading-[0.9] tracking-[-0.08em] lg:text-[4.55rem]',
     contentClassName: '',
     isMotionCard: true,
   },
@@ -72,19 +92,20 @@ export function HomeIndustrialGridSection() {
           viewport={sectionViewport}
           className="text-center font-sans text-[2.3rem] font-extrabold tracking-[-0.05em] text-[#ea928d] sm:text-[2.9rem] lg:whitespace-nowrap lg:text-[2.9rem] lg:leading-none xl:text-[3.12rem]"
         >
-          Sé parte de la revolución tecnológica industrial
+          Sé parte de la revolución tecnológica agroMINERA
         </motion.h2>
 
         <div className="mt-8 grid gap-4 lg:min-h-0 lg:flex-1 lg:grid-cols-[1fr_1fr]">
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.31fr_0.69fr]">
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.23fr_0.55fr_0.22fr]">
             <ServiceGhostCard {...cards[0]} delay={0.06} />
             <ServiceGhostCard {...cards[2]} delay={0.16} />
+            <ServiceGhostCard {...cards[4]} delay={0.26} />
           </div>
 
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.39fr_0.23fr_0.30fr]">
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.42fr_0.22fr_0.36fr]">
             <ServiceGhostCard {...cards[1]} delay={0.12} />
             <ServiceGhostCard {...cards[3]} delay={0.22} />
-            <ServiceGhostCard {...cards[4]} delay={0.3} />
+            <ServiceGhostCard {...cards[5]} delay={0.34} />
           </div>
         </div>
 
@@ -137,6 +158,7 @@ type ServiceGhostCardProps = {
   className: string
   titleClassName: string
   contentClassName: string
+  descriptionClassName?: string
   hasCardsImage?: boolean
   isMotionCard?: boolean
   isGuardianCard?: boolean
@@ -149,6 +171,7 @@ function ServiceGhostCard({
   className,
   titleClassName,
   contentClassName,
+  descriptionClassName,
   hasCardsImage = false,
   isMotionCard = false,
   isGuardianCard = false,
@@ -175,25 +198,39 @@ function ServiceGhostCard({
       </span>
 
       {isGuardianCard ? (
-        <div className="relative z-10 flex h-full w-full flex-col">
-          <div className="absolute left-[8.2rem] right-6 top-6 lg:left-[8.6rem] lg:right-7">
-            <p className="font-sans text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] text-[#292322] sm:text-[1.08rem] lg:text-[0.92rem]">
-              {description}
-            </p>
-          </div>
+        <div className="relative z-10 flex h-full flex-col">
+          <div className="flex min-h-full flex-col pl-[6rem] pr-4 pt-7 pb-6 lg:pl-[6.8rem] lg:pr-5 lg:pt-8 lg:pb-7">
+            <div className="mx-auto max-w-[14.4rem] text-center lg:max-w-[15.8rem]">
+              <p
+                className={cn(
+                  'font-sans text-[#292322]',
+                  descriptionClassName ??
+                    'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
+                )}
+              >
+                {description}
+              </p>
+            </div>
 
-          <div className="absolute -bottom-5 left-[9.8rem] right-4 flex justify-center lg:-bottom-5 lg:left-[10.2rem]">
-            <img
-              src={tarjetas}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none w-[17.2rem] max-w-full lg:w-[19.6rem]"
-            />
+            <div className="flex flex-1 items-start justify-center pb-12 pt-0">
+              <img
+                src={tarjetas}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none -translate-y-2 w-[12.4rem] max-w-full lg:w-[14.2rem]"
+              />
+            </div>
           </div>
         </div>
       ) : isMotionCard ? null : (
         <div className={cn('relative z-10', contentClassName)}>
-          <p className="font-sans text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] text-[#292322] sm:text-[1.08rem] lg:text-[0.92rem]">
+          <p
+            className={cn(
+              'font-sans text-[#292322]',
+              descriptionClassName ??
+                'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
+            )}
+          >
             {description}
           </p>
         </div>
