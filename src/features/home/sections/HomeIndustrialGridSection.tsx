@@ -110,42 +110,38 @@ export function HomeIndustrialGridSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ ...slowReveal, delay: 0.44 }}
-          viewport={sectionViewport}
           className="relative mt-4 px-2 sm:mt-5 lg:px-0"
         >
-          <motion.div
-            initial={{ scaleX: 0, opacity: 1 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 1.55, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
-            viewport={sectionViewport}
-            className="origin-left overflow-hidden rounded-r-full rounded-l-[2px]"
-          >
-            <Link
-              to="/servicios"
-              className="relative flex h-[2.35rem] w-full items-center justify-end overflow-hidden rounded-r-full rounded-l-[2px] bg-[linear-gradient(90deg,#75310f_0%,#b8521d_42%,#df9154_76%,#edd4b8_100%)] px-6 pr-24 text-[0.92rem] font-medium uppercase italic tracking-[-0.03em] text-white transition hover:brightness-[1.03]"
+          <div className="overflow-hidden rounded-r-full rounded-l-[2px]">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 1.55, delay: 0.52, ease: [0.16, 1, 0.3, 1] }}
+              viewport={sectionViewport}
+              style={{ originX: 0 }}
+              className="will-change-transform"
             >
-              <motion.span
-                initial={{ x: '-100%' }}
-                whileInView={{ x: '100%' }}
-                transition={{ duration: 1.7, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
-                viewport={sectionViewport}
-                className="absolute inset-y-0 left-0 z-0 w-[42%] bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.18)_45%,rgba(255,255,255,0.28)_58%,rgba(255,255,255,0)_100%)]"
-              />
-              <img
-                src={fondoGeometrico}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 z-0 h-full w-full object-cover opacity-[0.08] mix-blend-screen"
-              />
-              <span className="relative z-10">CONOCE MÁS &gt;</span>
-            </Link>
-          </motion.div>
-          <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-[56%] text-[3.4rem] leading-none text-[#e6cfb3]">
-            *
-          </span>
+              <Link
+                to="/servicios"
+                className="relative flex h-[2.35rem] w-full items-center justify-end overflow-hidden rounded-r-full rounded-l-[2px] bg-[linear-gradient(90deg,#75310f_0%,#b8521d_42%,#df9154_76%,#edd4b8_100%)] px-6 pr-24 text-[0.92rem] font-medium uppercase italic tracking-[-0.03em] text-white transition hover:brightness-[1.03]"
+              >
+                <motion.span
+                  initial={{ x: '-100%' }}
+                  whileInView={{ x: '100%' }}
+                  transition={{ duration: 1.7, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={sectionViewport}
+                  className="absolute inset-y-0 left-0 z-0 w-[42%] bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.18)_45%,rgba(255,255,255,0.28)_58%,rgba(255,255,255,0)_100%)]"
+                />
+                <img
+                  src={fondoGeometrico}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 z-0 h-full w-full object-cover opacity-[0.08] mix-blend-screen"
+                />
+                <span className="relative z-10 whitespace-nowrap">CONOCE MÁS &gt;</span>
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
