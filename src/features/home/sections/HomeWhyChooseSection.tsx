@@ -34,7 +34,7 @@ const cards = [
     ghostLines: ['ECOSISTEMA', 'COMPLETO'],
     accentLine: 1,
     description:
-      'Desde servicios financieros hasta tokenización de minerales preciosos y marketplace digital.',
+      'Desde servicios financieros hasta herramientas de gestión, trazabilidad y control operativo.',
     className: 'xl:min-h-[23.8rem]',
     contentClassName: 'pt-18',
   },

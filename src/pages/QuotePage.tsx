@@ -1,15 +1,24 @@
-import { PageHero } from '@/components/common/PageHero'
-import { QuoteProcessSection } from '@/features/quote/sections/QuoteProcessSection'
+import { QuoteClosingSection } from '@/features/quote/sections/QuoteClosingSection'
+import { QuoteHeroSection } from '@/features/quote/sections/QuoteHeroSection'
+import { QuoteMarketSection } from '@/features/quote/sections/QuoteMarketSection'
 
 export function QuotePage() {
   return (
     <>
-      <PageHero
-        eyebrow="Cotizaciones"
-        title="Un punto de entrada claro para solicitudes comerciales y nuevos proyectos."
-        description="Cuando definamos el flujo final, aquí podremos integrar formulario, criterios de alcance, FAQs y automatización de contacto."
+      <QuoteHeroSection />
+      <QuoteMarketSection
+        id="metales-preciosos"
+        kind="metals"
+        title="Metales en bolsa, lectura en vivo."
+        text="Oro, plata, cobre, aluminio, platino y paladio se presentan como tablero activo para leer precio, rango, volumen y dirección reciente."
       />
-      <QuoteProcessSection />
+      <QuoteMarketSection
+        id="agronomicos"
+        kind="agro"
+        title="Agronómicos en vivo."
+        text="Café, cacao, maíz, soya, trigo y azúcar se consultan como futuros agrícolas para conectar el dato con logística, inventario y operación en territorio."
+      />
+      <QuoteClosingSection />
     </>
   )
 }

@@ -9,6 +9,12 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname } = useLocation()
   const isHome = pathname === '/'
+  const hasImmersiveHero =
+    isHome ||
+    pathname === '/somos' ||
+    pathname === '/servicios' ||
+    pathname === '/cotizaciones' ||
+    pathname === '/contacto'
   const handleMenuClose = () => setIsMenuOpen(false)
   const headerTransition = {
     duration: 1.05,
@@ -18,10 +24,10 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'inset-x-0 top-0 z-50 border-b',
-        isHome
-          ? 'absolute border-white/70 bg-transparent'
-          : 'sticky border-white/50 bg-white/70 backdrop-blur-xl',
+        'absolute inset-x-0 top-0 z-50 border-b',
+        hasImmersiveHero
+          ? 'border-white/70 bg-transparent'
+          : 'border-white/50 bg-white/70 backdrop-blur-xl',
       )}
     >
       <motion.div
@@ -43,7 +49,7 @@ export function SiteHeader() {
                 alt="Fil-on Tech"
                 className={cn(
                   'h-8 w-auto md:h-[35px]',
-                  !isHome && 'brightness-0',
+                  !hasImmersiveHero && 'brightness-0',
                 )}
               />
             </NavLink>
@@ -53,7 +59,7 @@ export function SiteHeader() {
             type="button"
             className={cn(
               'inline-flex h-10 items-center rounded-full border px-4 text-sm font-semibold uppercase italic tracking-[-0.02em] transition md:hidden',
-              isHome
+              hasImmersiveHero
                 ? 'border-white/70 text-white hover:bg-white/10'
                 : 'border-line text-ink-950 hover:border-brand-500 hover:text-brand-700',
             )}
@@ -78,10 +84,10 @@ export function SiteHeader() {
                 className={({ isActive }) =>
                   cn(
                     'inline-flex items-center text-[0.92rem] font-medium uppercase italic tracking-[-0.02em] transition',
-                    isHome
+                    hasImmersiveHero
                       ? 'text-white/92 hover:text-white'
                       : 'text-ink-600 hover:text-ink-950',
-                    !isHome && isActive && 'text-ink-950',
+                    !hasImmersiveHero && isActive && 'text-ink-950',
                   )
                 }
               >
@@ -103,7 +109,7 @@ export function SiteHeader() {
           <nav
             className={cn(
               'flex flex-col gap-2 rounded-[18px] p-3',
-              isHome
+              hasImmersiveHero
                 ? 'border border-white/30 bg-[rgba(102,48,19,0.78)] backdrop-blur-md'
                 : 'panel',
             )}
@@ -117,8 +123,8 @@ export function SiteHeader() {
                 className={({ isActive }) =>
                   cn(
                     'inline-flex items-center rounded-2xl px-4 py-3 text-sm font-medium uppercase italic tracking-[-0.02em]',
-                    isHome ? 'text-white' : 'text-ink-600',
-                    isHome
+                    hasImmersiveHero ? 'text-white' : 'text-ink-600',
+                    hasImmersiveHero
                       ? isActive && 'bg-white/10'
                       : isActive && 'bg-ink-950 text-white',
                   )

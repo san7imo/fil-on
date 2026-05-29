@@ -1,15 +1,17 @@
-import { PageHero } from '@/components/common/PageHero'
-import { AboutStorySection } from '@/features/about/sections/AboutStorySection'
+import { AboutClosingSection } from '@/features/about/sections/AboutClosingSection'
+import { AboutHeroSection } from '@/features/about/sections/AboutHeroSection'
+import { AboutMethodSection } from '@/features/about/sections/AboutMethodSection'
+import { AboutNarrativeSection } from '@/features/about/sections/AboutNarrativeSection'
+import { AboutSectorsSection } from '@/features/about/sections/AboutSectorsSection'
 
 export function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Somos"
-        title="Un espacio preparado para contar la esencia, el método y la propuesta de Fil-on Tech."
-        description="La estructura ya separa esta página del home para que la narrativa institucional tenga más profundidad y mejores bloques de contenido."
-      />
-      <AboutStorySection />
+      <AboutHeroSection />
+      <AboutNarrativeSection />
+      <AboutSectorsSection />
+      <AboutMethodSection />
+      <AboutClosingSection />
     </>
   )
 }

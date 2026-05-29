@@ -38,9 +38,9 @@ export function SiteFooter() {
             </div>
 
             <p className="max-w-[24rem] text-[0.9rem] leading-[1.55] text-black/84">
-              Transformamos la industria minera a través de soluciones
-              financieras innovadoras, uniendo tecnología de vanguardia con el
-              poder de la cooperación.
+              Conectamos capital, tecnología, control y cumplimiento para
+              acompañar operaciones de la economía real con presencia en
+              territorio.
             </p>
 
             <div className="mt-7 space-y-4 text-[0.92rem] text-black/92">
@@ -102,7 +102,8 @@ export function SiteFooter() {
                 ¿Listo para transformar tu negocio?
               </h4>
               <p className="mt-3 text-[0.86rem] leading-[1.5] text-black/78">
-                Únete a la revolución tecnológica agrominera cripto.
+                Conversemos sobre soluciones financieras, operativas y
+                regulatorias para tu siguiente etapa de crecimiento.
               </p>
               <NavLink
                 to="/contacto"
@@ -122,7 +123,7 @@ export function SiteFooter() {
                 © {currentYear} Fil-On Tech. Todos los derechos reservados.
               </p>
               <p className="mt-1 text-[0.78rem] text-black/62">
-                Fintech Agrominera - Transformando la industria minera
+                Fintech agrominera para industrias estratégicas
               </p>
             </div>
 
