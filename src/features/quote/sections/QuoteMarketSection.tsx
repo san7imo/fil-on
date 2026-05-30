@@ -83,20 +83,13 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
     <section
       id={id}
       className={cn(
-        'relative isolate flex min-h-screen overflow-hidden py-12 sm:py-14 lg:h-screen lg:min-h-[720px] lg:py-0',
-        kind === 'metals'
-          ? 'bg-[#12100f] text-white'
-          : 'bg-[linear-gradient(135deg,#15110e_0%,#3e1d14_42%,#ef8f8d_100%)] text-white',
+        'relative isolate flex min-h-screen overflow-hidden py-14 sm:py-16 lg:h-screen lg:min-h-[720px] lg:py-0',
+        'bg-[#f7f5f2] text-[#201614]',
       )}
     >
       <div
         aria-hidden="true"
-        className={cn(
-          'pointer-events-none absolute inset-0 -z-10 opacity-60',
-          kind === 'metals'
-            ? 'bg-[radial-gradient(circle_at_72%_20%,rgba(143,211,216,0.18),transparent_34%),linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:auto,52px_52px,52px_52px]'
-            : 'bg-[radial-gradient(circle_at_22%_20%,rgba(224,184,78,0.2),transparent_34%),linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[length:auto,52px_52px,52px_52px]',
-        )}
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_24%,rgba(230,142,88,0.08),transparent_32%)]"
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1180px] flex-col justify-center px-5 sm:px-6 lg:px-8">
@@ -109,16 +102,16 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
         >
           <div>
             <LiveBadge status={result.status} />
-            <h2 className="mt-3 max-w-[32rem] font-sans text-[2.05rem] font-extrabold leading-[0.94] tracking-[-0.06em] sm:text-[2.65rem] lg:text-[2.95rem]">
+            <h2 className="mt-3 max-w-[32rem] font-sans text-[2.05rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-[#201614] sm:text-[2.65rem] lg:text-[2.95rem]">
               {title}
             </h2>
           </div>
 
           <div className="max-w-[39rem] lg:justify-self-end">
-            <p className="text-[0.86rem] font-semibold leading-[1.45] text-white/76 sm:text-[0.92rem]">
+            <p className="text-[0.86rem] font-semibold leading-[1.45] text-[#201614]/72 sm:text-[0.92rem]">
               {text}
             </p>
-            <div className="mt-3 flex flex-wrap gap-2 text-[0.64rem] font-extrabold uppercase tracking-[0.16em] text-white/54">
+            <div className="mt-3 flex flex-wrap gap-2 text-[0.64rem] font-extrabold uppercase tracking-[0.16em] text-[#201614]/52">
               <span>{result.sourceLabel}</span>
               <span>Actualizado {updatedLabel}</span>
             </div>
@@ -167,13 +160,13 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
 
 function LiveBadge({ status }: { status: QuoteLoadResult['status'] }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-3.5 py-1.5 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-white/78">
+    <div className="inline-flex items-center gap-2 rounded-full border border-[#e3c4a8] bg-[#f1efec] px-3.5 py-1.5 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-[#8f4a22]">
       <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fd3d8] opacity-60" />
-        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8fd3d8]" />
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d67b45] opacity-60" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#d67b45]" />
       </span>
       En vivo
-      {status === 'fallback' && <span className="text-white/42">sincronizando</span>}
+      {status === 'fallback' && <span className="text-[#8f4a22]/52">sincronizando</span>}
     </div>
   )
 }
@@ -207,10 +200,10 @@ function TickerRail({
             type="button"
             onClick={() => onSelect(quote.id)}
             className={cn(
-              'group min-h-[4rem] rounded-[0.95rem] border px-3 py-2.5 text-left transition duration-300 ease-out',
+              'group min-h-[4rem] rounded-[1rem] border px-3.5 py-3 text-left transition duration-300 ease-out',
               active
-                ? 'border-white/34 bg-white text-[#16110f] shadow-[0_20px_50px_rgba(0,0,0,0.24)]'
-                : 'border-white/10 bg-white/7 text-white hover:border-white/24 hover:bg-white/10',
+                ? 'border-[#d67b45] bg-white text-[#201614] shadow-[0_8px_24px_rgba(214,123,69,0.12)]'
+                : 'border-[#e3c4a8] bg-[#f1efec] text-[#201614] hover:border-[#d67b45] hover:bg-white',
             )}
           >
             <div className="flex items-start justify-between gap-2">
@@ -218,12 +211,12 @@ function TickerRail({
                 <p
                   className={cn(
                     'text-[0.64rem] font-extrabold uppercase tracking-[0.16em]',
-                    active ? 'text-[#8f4a22]' : 'text-white/48',
+                    active ? 'text-[#d67b45]' : 'text-[#8f4a22]',
                   )}
                 >
                   {quote.symbol}
                 </p>
-                  <p className="mt-1 text-[0.94rem] font-extrabold leading-none tracking-[-0.05em]">
+                  <p className="mt-1 text-[0.94rem] font-extrabold leading-none tracking-[-0.05em] text-[#201614]">
                   {quote.name}
                 </p>
               </div>
@@ -232,11 +225,11 @@ function TickerRail({
                   'rounded-full px-2 py-1 text-[0.66rem] font-extrabold',
                   positive
                     ? active
-                      ? 'bg-[#d67b45]/12 text-[#a64e1d]'
-                      : 'bg-white/10 text-[#f5cfb0]'
+                      ? 'bg-[#d67b45]/16 text-[#a64e1d]'
+                      : 'bg-[#e3c4a8]/40 text-[#7b4a2f]'
                     : active
-                      ? 'bg-[#7b2f24]/10 text-[#7b2f24]'
-                      : 'bg-[#7b2f24]/24 text-white/76',
+                      ? 'bg-[#ef8f8d]/20 text-[#7b2f24]'
+                      : 'bg-[#ef8f8d]/24 text-[#7b2f24]',
                 )}
               >
                 {positive ? '+' : ''}
@@ -244,10 +237,10 @@ function TickerRail({
               </span>
             </div>
             <div className="mt-2 flex items-end justify-between gap-2">
-              <p className="text-[0.98rem] font-extrabold leading-none tracking-[-0.05em]">
+              <p className="text-[0.98rem] font-extrabold leading-none tracking-[-0.05em] text-[#201614]">
                 {formatPrice(quote)}
               </p>
-              <MiniBars quote={quote} active={active} kind={kind} />
+              <MiniBars quote={quote} active={active} />
             </div>
           </button>
         )
@@ -266,23 +259,23 @@ function MarketTerminal({ quote, kind }: { quote: MarketQuote; kind: 'metals' | 
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ...reveal, delay: 0.14 }}
       viewport={viewport}
-      className="relative overflow-hidden rounded-[1.45rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-[4px] sm:p-4"
+      className="relative overflow-hidden rounded-[1.55rem] border border-[#e3c4a8] bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)] sm:p-6"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-white/48">
+          <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-[#8f4a22]">
             {quote.symbol} · {quote.market}
           </p>
-          <h3 className="mt-2 font-sans text-[1.9rem] font-extrabold leading-none tracking-[-0.07em] text-white sm:text-[2.45rem]">
+          <h3 className="mt-2 font-sans text-[1.9rem] font-extrabold leading-none tracking-[-0.07em] text-[#201614] sm:text-[2.45rem]">
             {quote.name}
           </h3>
         </div>
 
         <div className="text-right">
-          <p className="text-[1.85rem] font-extrabold leading-none tracking-[-0.07em] text-white sm:text-[2.35rem]">
+          <p className="text-[1.85rem] font-extrabold leading-none tracking-[-0.07em] text-[#201614] sm:text-[2.35rem]">
             {formatPrice(quote)}
           </p>
-          <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-white/44">
+          <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[#8f4a22]">
             {quote.unit}
           </p>
         </div>
@@ -290,7 +283,7 @@ function MarketTerminal({ quote, kind }: { quote: MarketQuote; kind: 'metals' | 
 
       <DetailedChart quote={quote} kind={kind} />
 
-      <div className="mt-3 grid gap-2 sm:grid-cols-4">
+      <div className="mt-4 grid gap-2 sm:grid-cols-4">
         <MetricTile label="Mínimo" value={formatNumeric(low)} />
         <MetricTile label="Máximo" value={formatNumeric(high)} />
         <MetricTile label="Cambio" value={`${quote.change >= 0 ? '+' : ''}${quote.change.toFixed(2)}%`} />
@@ -331,16 +324,16 @@ function MarketMap({
             type="button"
             onClick={() => onSelect(quote.id)}
             className={cn(
-              'relative min-h-[7.1rem] overflow-hidden rounded-[1.1rem] border p-3.5 text-left transition duration-300 ease-out',
+              'relative min-h-[7.1rem] overflow-hidden rounded-[1.1rem] border p-4 text-left transition duration-300 ease-out',
               active
-                ? 'border-white/38 bg-white text-[#16110f]'
-                : 'border-white/10 bg-white/7 text-white hover:border-white/24 hover:bg-white/10',
+                ? 'border-[#d67b45] bg-white text-[#201614] shadow-[0_8px_24px_rgba(214,123,69,0.12)]'
+                : 'border-[#e3c4a8] bg-[#f1efec] text-[#201614] hover:border-[#d67b45] hover:bg-white',
             )}
           >
             <span
               className={cn(
                 'pointer-events-none absolute -bottom-2 right-2 font-sans text-[3.8rem] font-extrabold uppercase leading-none tracking-[-0.08em]',
-                active ? 'text-[#16110f]/5' : 'text-white/6',
+                active ? 'text-[#201614]/6' : 'text-[#201614]/4',
               )}
             >
               {quote.name}
@@ -350,12 +343,12 @@ function MarketMap({
                 <p
                   className={cn(
                     'text-[0.66rem] font-extrabold uppercase tracking-[0.16em]',
-                    active ? 'text-[#8f4a22]' : 'text-white/44',
+                    active ? 'text-[#d67b45]' : 'text-[#8f4a22]',
                   )}
                 >
                   {quote.market}
                 </p>
-                  <h4 className="mt-1.5 text-[1.32rem] font-extrabold leading-none tracking-[-0.06em]">
+                  <h4 className="mt-1.5 text-[1.32rem] font-extrabold leading-none tracking-[-0.06em] text-[#201614]">
                   {quote.name}
                 </h4>
               </div>
@@ -364,11 +357,11 @@ function MarketMap({
                   'rounded-full px-2.5 py-1 text-[0.7rem] font-extrabold',
                   positive
                     ? active
-                      ? 'bg-[#d67b45]/12 text-[#a64e1d]'
-                      : 'bg-white/10 text-[#f5cfb0]'
+                      ? 'bg-[#d67b45]/14 text-[#a64e1d]'
+                      : 'bg-[#e3c4a8]/48 text-[#7b4a2f]'
                     : active
-                      ? 'bg-[#7b2f24]/10 text-[#7b2f24]'
-                      : 'bg-[#7b2f24]/24 text-white/76',
+                      ? 'bg-[#ef8f8d]/20 text-[#7b2f24]'
+                      : 'bg-[#ef8f8d]/24 text-[#7b2f24]',
                 )}
               >
                 {positive ? '+' : ''}
@@ -377,19 +370,19 @@ function MarketMap({
             </div>
             <div className="relative z-10 mt-4 flex items-end justify-between gap-4">
               <div>
-                <p className="text-[1.55rem] font-extrabold leading-none tracking-[-0.06em]">
+                <p className="text-[1.55rem] font-extrabold leading-none tracking-[-0.06em] text-[#201614]">
                   {formatPrice(quote)}
                 </p>
                 <p
                   className={cn(
                     'mt-1 text-[0.66rem] font-extrabold uppercase tracking-[0.16em]',
-                    active ? 'text-[#16110f]/42' : 'text-white/42',
+                    active ? 'text-[#8f4a22]' : 'text-[#8f4a22]/64',
                   )}
                 >
                   {quote.unit}
                 </p>
               </div>
-              <MiniLine quote={quote} active={active} kind={kind} />
+              <MiniLine quote={quote} active={active} />
             </div>
           </button>
         )
@@ -424,12 +417,12 @@ function DetailedChart({ quote, kind }: { quote: MarketQuote; kind: 'metals' | '
   const lastLabel = quote.points.at(-1)?.label ?? 'Hoy'
 
   return (
-    <div className="mt-3 overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#090807]/72 p-3">
+    <div className="mt-4 overflow-hidden rounded-[1.2rem] border border-[#e3c4a8] bg-[#f1efec] p-4">
       <svg viewBox={`0 0 ${width} ${height}`} className="h-[12.6rem] w-full" aria-label={`Gráfico de ${quote.name}`}>
         <defs>
           <linearGradient id={`area-${quote.id}-${kind}`} x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor={quote.color} stopOpacity="0.36" />
-            <stop offset="100%" stopColor={quote.color} stopOpacity="0.04" />
+            <stop offset="0%" stopColor={quote.color} stopOpacity="0.16" />
+            <stop offset="100%" stopColor={quote.color} stopOpacity="0.02" />
           </linearGradient>
         </defs>
 
@@ -443,14 +436,14 @@ function DetailedChart({ quote, kind }: { quote: MarketQuote; kind: 'metals' | '
                 x2={padding.left + chartWidth}
                 y1={y}
                 y2={y}
-                stroke="rgba(255,255,255,0.12)"
+                stroke="rgba(143,74,34,0.1)"
                 strokeDasharray="4 6"
               />
               <text
                 x={width - 6}
                 y={y + 4}
                 textAnchor="end"
-                className="fill-white/42 text-[0.62rem] font-bold"
+                className="fill-[#8f4a22]/56 text-[0.62rem] font-bold"
               >
                 {formatNumeric(value)}
               </text>
@@ -473,20 +466,20 @@ function DetailedChart({ quote, kind }: { quote: MarketQuote; kind: 'metals' | '
             cx={point.x}
             cy={point.y}
             r="4.2"
-            fill="#090807"
+            fill="#f1efec"
             stroke={quote.color}
             strokeWidth="3"
           />
         ))}
 
-        <text x={padding.left} y={height - 10} className="fill-white/38 text-[0.62rem] font-bold">
+        <text x={padding.left} y={height - 10} className="fill-[#8f4a22]/48 text-[0.62rem] font-bold">
           {firstLabel}
         </text>
         <text
           x={padding.left + chartWidth / 2}
           y={height - 10}
           textAnchor="middle"
-          className="fill-white/38 text-[0.62rem] font-bold"
+          className="fill-[#8f4a22]/48 text-[0.62rem] font-bold"
         >
           {middleLabel}
         </text>
@@ -494,7 +487,7 @@ function DetailedChart({ quote, kind }: { quote: MarketQuote; kind: 'metals' | '
           x={padding.left + chartWidth}
           y={height - 10}
           textAnchor="end"
-          className="fill-white/38 text-[0.62rem] font-bold"
+          className="fill-[#8f4a22]/48 text-[0.62rem] font-bold"
         >
           {lastLabel}
         </text>
@@ -505,11 +498,11 @@ function DetailedChart({ quote, kind }: { quote: MarketQuote; kind: 'metals' | '
 
 function MetricTile({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[0.85rem] border border-white/10 bg-white/7 px-3 py-2.5">
-      <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-white/38">
+    <div className="rounded-[1rem] border border-[#e3c4a8] bg-[#f1efec] px-3 py-2.5">
+      <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.16em] text-[#8f4a22]">
         {label}
       </p>
-      <p className="mt-1.5 text-[0.92rem] font-extrabold leading-none tracking-[-0.04em] text-white">
+      <p className="mt-1.5 text-[0.92rem] font-extrabold leading-none tracking-[-0.04em] text-[#201614]">
         {value}
       </p>
     </div>
@@ -519,11 +512,9 @@ function MetricTile({ label, value }: { label: string; value: string }) {
 function MiniLine({
   quote,
   active,
-  kind,
 }: {
   quote: MarketQuote
   active: boolean
-  kind: 'metals' | 'agro'
 }) {
   const width = 128
   const height = 42
@@ -544,12 +535,12 @@ function MiniLine({
     <svg viewBox={`0 0 ${width} ${height}`} className="h-9 w-24" aria-hidden="true">
       <path
         d={`${path} L ${width} ${height} L 0 ${height} Z`}
-        fill={active ? 'rgba(214,123,69,0.12)' : 'rgba(255,255,255,0.08)'}
+        fill={active ? 'rgba(214,123,69,0.14)' : 'rgba(214,123,69,0.06)'}
       />
       <path
         d={path}
         fill="none"
-        stroke={active ? quote.color : kind === 'metals' ? '#8fd3d8' : '#f5cfb0'}
+        stroke={active ? quote.color : quote.color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="3"
@@ -561,11 +552,9 @@ function MiniLine({
 function MiniBars({
   quote,
   active,
-  kind,
 }: {
   quote: MarketQuote
   active: boolean
-  kind: 'metals' | 'agro'
 }) {
   const values = quote.points.slice(-5).map((point) => point.value)
   const min = Math.min(...values)
@@ -579,7 +568,7 @@ function MiniBars({
           key={`${quote.id}-${index}`}
           className={cn(
             'block w-1.5 rounded-full',
-            active ? 'bg-[#d67b45]' : kind === 'metals' ? 'bg-[#8fd3d8]/72' : 'bg-[#f5cfb0]/72',
+            active ? 'bg-[#d67b45]' : 'bg-[#e3c4a8]/64',
           )}
           style={{ height: `${28 + ((value - min) / range) * 72}%` }}
         />
