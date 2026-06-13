@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#7B3412"/>
+  <path d="M0 0H1200V630H0V0Z" fill="url(#paint0_linear)"/>
+  <circle cx="920" cy="110" r="260" fill="#F4B28A" fill-opacity="0.22"/>
+  <circle cx="175" cy="520" r="220" fill="#178A52" fill-opacity="0.18"/>
+  <text x="92" y="205" fill="white" font-family="Manrope, Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="-6">Fil-On Tech</text>
+  <text x="96" y="292" fill="#FFE0C3" font-family="Manrope, Arial, sans-serif" font-size="38" font-weight="700">Fintech agrominera para la economía real</text>
+  <text x="96" y="390" fill="white" fill-opacity="0.86" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="600">Capital, tecnología, control operativo y cumplimiento</text>
+  <text x="96" y="438" fill="white" fill-opacity="0.86" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="600">para minería, agroindustria e industrias estratégicas.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D190A"/>
+      <stop offset="0.48" stop-color="#8F4A22"/>
+      <stop offset="1" stop-color="#D67B45"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.fil-ontech.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fil-ontech.com/somos</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fil-ontech.com/servicios</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fil-ontech.com/cotizaciones</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fil-ontech.com/contacto</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

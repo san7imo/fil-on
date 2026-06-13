@@ -128,15 +128,15 @@ export function SiteFooter() {
             </div>
 
             <div className="flex items-center gap-5 text-[0.86rem] text-black/78">
-              <a href="/privacidad" className="transition hover:text-black">
+              <NavLink to="/privacidad" className="transition hover:text-black">
                 Privacidad
-              </a>
-              <a href="/terminos" className="transition hover:text-black">
+              </NavLink>
+              <NavLink to="/terminos" className="transition hover:text-black">
                 Términos
-              </a>
-              <a href="/cookies" className="transition hover:text-black">
+              </NavLink>
+              <NavLink to="/cookies" className="transition hover:text-black">
                 Cookies
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

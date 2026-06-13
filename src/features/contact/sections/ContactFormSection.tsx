@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'motion/react'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { siteConfig } from '@/shared/config/site'
 
 const viewport = { once: true, amount: 0.24 }
 const reveal = {
@@ -44,8 +45,19 @@ export function ContactFormSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí irá la lógica de envío del formulario
-    console.log('Form submitted:', formData)
+    const subject = encodeURIComponent('Solicitud de contacto desde fil-ontech.com')
+    const body = encodeURIComponent(
+      [
+        `Nombre: ${formData.name}`,
+        `Correo: ${formData.email}`,
+        `Teléfono: ${formData.phone || 'No indicado'}`,
+        '',
+        'Mensaje:',
+        formData.message,
+      ].join('\n'),
+    )
+
+    window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`
     setSubmitted(true)
     setTimeout(() => {
       setSubmitted(false)
@@ -117,7 +129,7 @@ export function ContactFormSection() {
               className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4"
             >
               <p className="text-[0.88rem] font-semibold text-green-700">
-                ✓ Mensaje enviado exitosamente. Nos comunicaremos pronto.
+                Se abrió tu cliente de correo con el mensaje preparado.
               </p>
             </motion.div>
           )}

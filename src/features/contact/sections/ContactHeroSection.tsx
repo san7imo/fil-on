@@ -9,6 +9,7 @@ import {
 } from 'motion/react'
 import fondoHeroFooter from '@/assets/fondoheroyfooter.webp'
 import figuraGeometrica from '@/assets/figurageometrica.webp'
+import { siteConfig } from '@/shared/config/site'
 
 export function ContactHeroSection() {
   const rotation = useMotionValue(0)
@@ -90,7 +91,7 @@ export function ContactHeroSection() {
               className="mt-9 flex flex-wrap gap-3"
             >
               <a
-                href="mailto:contacto@fil-ontech.com"
+                href={`mailto:${siteConfig.email}`}
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-[#7b3412] transition hover:brightness-[0.98]"
               >
                 ESCRIBIR AL EQUIPO &gt;
