@@ -12,7 +12,11 @@ export const navigationItems = [
     href: '/servicios',
   },
   {
-    label: 'Cotización',
+    label: 'Aliados',
+    href: '/servicios#aliados',
+  },
+  {
+    label: 'Inteligencia',
     href: '/cotizaciones',
   },
   {

@@ -57,11 +57,11 @@ export const routeSeo: Record<string, SeoConfig> = {
     ],
   },
   '/cotizaciones': {
-    title: 'Cotizaciones Fil-On Tech | Referencias para metales y agro',
+    title: 'Centro de Inteligencia Fil-On | Indicadores de mercado',
     description:
-      'Consulta referencias de mercado para metales y productos agronómicos que apoyan decisiones de compra, financiación, inventario y operación.',
+      'Actualidad, tendencias, análisis e indicadores de mercado para impulsar la transformación del ecosistema agrominero.',
     path: '/cotizaciones',
-    keywords: [...defaultKeywords, 'cotizaciones', 'metales', 'agronómicos'],
+    keywords: [...defaultKeywords, 'centro de inteligencia', 'indicadores de mercado', 'metales', 'agronómicos'],
   },
   '/contacto': {
     title: 'Contacto Fil-On Tech | Hablemos de operación y capital',

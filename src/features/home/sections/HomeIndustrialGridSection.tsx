@@ -14,7 +14,7 @@ const cards = [
   {
     title: 'Capital',
     description:
-      'Liquidez, tecnología y cumplimiento integrados para operar con control y trazabilidad.',
+      'Suministro inteligente de recursos para potenciar operaciones de alto impacto.',
     className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
       'bottom-1 left-7 text-[4.15rem] tracking-[-0.08em] lg:text-[4.7rem]',
@@ -26,7 +26,7 @@ const cards = [
   {
     title: 'Tech',
     description:
-      'Soluciones de tecnología financiera y de gestión para potenciar el sector agrominero.',
+      'Liquidez conectada a la realidad de tu operación.',
     className: 'min-h-[17rem] lg:min-h-0',
     titleClassName:
       'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[4.95rem]',
@@ -38,7 +38,7 @@ const cards = [
   {
     title: 'Guardian',
     description:
-      'Lab de innovación que integra minería, agroindustria y tecnología.',
+      'Tarjetas corporativas y control del gasto operativo.',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
       'left-4 top-1/2 -translate-y-1/2 text-[3.65rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] lg:text-[4.5rem]',
@@ -49,9 +49,9 @@ const cards = [
       'text-[0.94rem] font-bold leading-[1.05] tracking-[-0.03em] sm:text-[1rem] lg:text-[0.86rem]',
   },
   {
-    title: 'Legal',
+    title: 'Secure',
     description:
-      'Cumplimiento inteligente que asegura la viabilidad de la innovación.',
+      'Operamos con confianza. Crecemos con cumplimiento.',
     className: 'min-h-[12rem] lg:min-h-0',
     titleClassName:
       'bottom-1 right-5 text-[4rem] tracking-[-0.08em] lg:text-[4.65rem]',
@@ -60,9 +60,9 @@ const cards = [
       'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
   },
   {
-    title: 'Secure',
+    title: 'Control',
     description:
-      'Infraestructura jurídica y regulatoria para escalar con seguridad, control y cumplimiento inteligente.',
+      'Plataforma que integra control, trazabilidad y cumplimiento normativo.',
     className: 'min-h-[11.6rem] lg:min-h-0',
     titleClassName:
       'bottom-1 right-5 text-[3.45rem] tracking-[-0.08em] lg:text-[4.05rem]',
@@ -72,7 +72,8 @@ const cards = [
   },
   {
     title: 'MOVI\nMIENTO',
-    description: '',
+    description:
+      'Convertimos la visión en acción para acelerar resultados y generar impacto sostenible.',
     className: 'min-h-[11.8rem] justify-end lg:min-h-0',
     titleClassName:
       'left-5 top-5 whitespace-pre-line text-[3.75rem] leading-[0.9] tracking-[-0.08em] lg:text-[4.55rem]',
@@ -218,7 +219,13 @@ function ServiceGhostCard({
             </div>
           </div>
         </div>
-      ) : isMotionCard ? null : (
+      ) : isMotionCard ? (
+        <div className="absolute bottom-5 left-6 right-6 z-10 max-w-[17rem]">
+          <p className="font-sans text-[0.88rem] font-bold leading-[1.12] tracking-[-0.025em] text-[#292322] sm:text-[0.94rem] lg:text-[0.84rem]">
+            {description}
+          </p>
+        </div>
+      ) : (
         <div className={cn('relative z-10', contentClassName)}>
           <p
             className={cn(

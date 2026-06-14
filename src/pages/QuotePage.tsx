@@ -12,14 +12,14 @@ export function QuotePage() {
       <QuoteMarketSection
         id="metales-preciosos"
         kind="metals"
-        title="Metales en bolsa, lectura en vivo."
+        title="Indicadores de mercado."
         text="Oro, plata, cobre, aluminio, platino y paladio se presentan como tablero activo para leer precio, rango, volumen y dirección reciente."
       />
       <QuoteMarketSection
         id="agronomicos"
         kind="agro"
-        title="Agronómicos en vivo."
-        text="Café, cacao, maíz, soya, trigo y azúcar se consultan como futuros agrícolas para conectar el dato con logística, inventario y operación en territorio."
+        title="Insumos informativos."
+        text="Café, cacao, maíz, soya, trigo y azúcar se consultan como futuros agrícolas para conectar actualidad, logística, inventario y operación en territorio."
       />
       <QuoteClosingSection />
     </>

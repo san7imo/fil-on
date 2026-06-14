@@ -29,7 +29,7 @@ const services = [
     capabilities: ['Tarjetas corporativas', 'Control operativo', 'Seguimiento'],
   },
   {
-    label: 'Secure / LegalTech',
+    label: 'Secure',
     title: 'Cumplimiento aplicable.',
     description:
       'Prevención de riesgos, lectura regulatoria y soporte documental.',

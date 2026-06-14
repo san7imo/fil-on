@@ -1,12 +1,14 @@
 import { motion } from 'motion/react'
-import { Link } from 'react-router-dom'
 import agromineriaSembradora from '@/assets/agromineria-sembradora.webp'
+import { siteConfig } from '@/shared/config/site'
 
 const viewport = { once: true, amount: 0.28 }
 const reveal = {
   duration: 1.2,
   ease: [0.16, 1, 0.3, 1] as const,
 }
+
+const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/\D/g, '')}`
 
 export function AboutClosingSection() {
   return (
@@ -39,18 +41,14 @@ export function AboutClosingSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/cotizaciones"
-              className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-[#7b3412] transition hover:brightness-[0.98]"
-            >
-              SOLICITAR COTIZACIÓN &gt;
-            </Link>
-            <Link
-              to="/contacto"
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex min-h-11 items-center rounded-full border border-white/28 bg-white/8 px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-white transition hover:bg-white/14"
             >
-              IR A CONTACTO &gt;
-            </Link>
+              IR A WHATSAPP &gt;
+            </a>
           </div>
         </motion.article>
       </div>

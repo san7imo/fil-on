@@ -10,15 +10,12 @@ const reveal = {
 const principles = [
   {
     label: 'Territorio',
-    text: 'Entendemos el contexto operativo antes de diseñar la solución.',
   },
   {
     label: 'Control',
-    text: 'Traducimos complejidad en decisiones más claras y trazables.',
   },
   {
     label: 'Confianza',
-    text: 'Acompañamos la ejecución con criterio técnico y cercanía real.',
   },
 ]
 
@@ -62,7 +59,7 @@ export function AboutNarrativeSection() {
             Fil-On Tech nace para responder a una necesidad concreta: llevar
             soluciones financieras, tecnológicas y de cumplimiento a sectores
             donde la operación depende de coordinación, trazabilidad y capacidad
-            de ejecución sobre el terreno.
+            de ejecución sobre territorios.
           </motion.p>
 
           <motion.p
@@ -72,9 +69,9 @@ export function AboutNarrativeSection() {
             viewport={viewport}
             className="mt-4 max-w-[31rem] text-[0.94rem] font-semibold leading-[1.55] text-[#201614]/76 sm:text-[0.98rem]"
           >
-            Trabajamos con una lectura transversal entre minería, agroindustria
-            e industria estratégica para convertir necesidades complejas en
-            estructuras más simples, seguras y sostenibles.
+            Trabajamos con una lectura transversal entre los sectores mineros y
+            agroindustriales para convertir necesidades complejas en estructuras
+            más simples, seguras y sostenibles.
           </motion.p>
 
           <div className="mt-7 grid gap-4 sm:grid-cols-3">
@@ -85,13 +82,10 @@ export function AboutNarrativeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ ...reveal, delay: 0.18 + index * 0.08 }}
                 viewport={viewport}
-                className="rounded-[1.4rem] bg-white/78 px-5 py-5 shadow-[0_14px_40px_rgba(23,15,8,0.08)]"
+                className="flex min-h-[6rem] items-center justify-center rounded-[1.4rem] bg-white/78 px-5 py-5 shadow-[0_14px_40px_rgba(23,15,8,0.08)]"
               >
-                <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[#d67b45]">
+                <p className="text-center text-[0.74rem] font-extrabold uppercase tracking-[0.18em] text-[#d67b45]">
                   {item.label}
-                </p>
-                <p className="mt-3 text-[0.84rem] font-semibold leading-[1.44] text-[#201614]/84">
-                  {item.text}
                 </p>
               </motion.article>
             ))}

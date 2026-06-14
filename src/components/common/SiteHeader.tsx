@@ -96,7 +96,29 @@ export function SiteHeader() {
             ))}
           </motion.nav>
 
-          <div className="hidden w-[86px] md:block" aria-hidden="true" />
+          <motion.div
+            initial={{ opacity: 0, x: 18 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ...headerTransition, delay: 0.32 }}
+            className="hidden justify-end md:flex md:w-[86px]"
+          >
+            <NavLink
+              to="/contacto"
+              className={cn(
+                'inline-flex h-10 w-10 items-center justify-center rounded-full border transition',
+                hasImmersiveHero
+                  ? 'border-white/62 text-white hover:bg-white/10'
+                  : 'border-line text-ink-600 hover:border-ink-950 hover:text-ink-950',
+              )}
+              aria-label="Ingreso"
+              title="Ingreso"
+            >
+              <svg viewBox="0 0 24 24" className="h-[1.05rem] w-[1.05rem]" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 21a8 8 0 0 0-16 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </NavLink>
+          </motion.div>
         </div>
 
         <div

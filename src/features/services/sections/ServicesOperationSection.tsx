@@ -72,10 +72,10 @@ export function ServicesOperationSection() {
             viewport={viewport}
             className="mt-6 max-w-[33rem] text-[0.98rem] font-semibold leading-[1.56] text-[#201614]/78 sm:text-[1rem]"
           >
-            En agroindustria, minería e industria estratégica, cada decisión
-            financiera termina impactando compras, turnos, pagos, permisos y
-            relaciones de confianza. Por eso integramos herramientas que puedan
-            sostener la operación diaria.
+            En agroindustria y minería, cada decisión financiera termina
+            impactando compras, turnos, pagos, permisos y relaciones de
+            confianza. Por eso integramos herramientas que puedan sostener la
+            operación diaria.
           </motion.p>
 
           <div className="mt-8 grid gap-4">

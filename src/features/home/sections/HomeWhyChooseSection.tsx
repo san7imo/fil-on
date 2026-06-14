@@ -16,25 +16,25 @@ const cards = [
     ghostLines: ['INCLUSIÓN', 'FINANCIERA'],
     accentLine: 1,
     description:
-      'Facilitamos el acceso a servicios financieros especializados para 73.000 mineros de subsistencia en Latinoamérica.',
+      'Democratizamos el acceso a soluciones financieras para miles de mineros y sus familias.',
     className: 'xl:min-h-[29rem] xl:translate-y-10',
     contentClassName: 'pt-18',
   },
   {
     icon: 'device',
-    ghostLines: ['TECNOLOGÍA', 'SEGURA'],
+    ghostLines: ['ALIANZAS', 'OPERATIVAS'],
     accentLine: 1,
     description:
-      'Utilizamos tecnologías financieras avanzadas para garantizar la seguridad en cada transacción.',
+      'Integramos tecnología, entidades financieras, operadores, comercializadores y aliados especializados.',
     className: 'xl:min-h-[23.8rem]',
     contentClassName: 'pt-26',
   },
   {
     icon: 'gear',
-    ghostLines: ['ECOSISTEMA', 'COMPLETO'],
+    ghostLines: ['ECOSISTEMA', 'MINERO'],
     accentLine: 1,
     description:
-      'Desde servicios financieros hasta herramientas de gestión, trazabilidad y control operativo.',
+      'Un ecosistema diseñado para conectar oportunidades, optimizar operaciones y generar valor sostenible.',
     className: 'xl:min-h-[23.8rem]',
     contentClassName: 'pt-18',
   },
@@ -43,7 +43,7 @@ const cards = [
     ghostLines: ['SOSTENIBILIDAD Y', 'FUTURO'],
     accentLine: 1,
     description:
-      'Promovemos prácticas responsables y sostenibles para una minería con impacto positivo en comunidades y medio ambiente.',
+      'Construimos el futuro de una minería responsable con conservación ambiental y desarrollo comunitario.',
     className: 'xl:min-h-[29rem] xl:translate-y-10',
     contentClassName: 'pt-20',
     highlighted: true,

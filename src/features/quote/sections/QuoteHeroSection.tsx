@@ -64,7 +64,7 @@ export function QuoteHeroSection() {
               transition={{ duration: 1.15, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-[50rem] font-sans text-[2.85rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-white sm:text-[3.65rem] lg:text-[4.8rem]"
             >
-              Cotizaciones reales para metales y agronómicos.
+              Centro de Inteligencia Fil-On.
             </motion.h1>
 
             <motion.p
@@ -73,8 +73,8 @@ export function QuoteHeroSection() {
               transition={{ duration: 0.95, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
               className="mt-7 max-w-[42rem] text-[0.98rem] font-semibold leading-[1.55] text-white/90 sm:text-[1.06rem]"
             >
-              Consulta referencias de mercado para activos que mueven decisiones
-              de compra, financiación, cobertura y operación territorial.
+              Actualidad, tendencias, análisis e indicadores de mercado para
+              impulsar la transformación del ecosistema agrominero.
             </motion.p>
 
             <motion.div
@@ -87,13 +87,13 @@ export function QuoteHeroSection() {
                 href="#metales-preciosos"
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-6 py-3 text-[0.78rem] font-extrabold uppercase tracking-[-0.03em] text-[#783112] transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#f7f5f2]"
               >
-                Metales preciosos
+                Indicadores de mercado
               </a>
               <a
                 href="#agronomicos"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/34 bg-white/8 px-6 py-3 text-[0.78rem] font-extrabold uppercase tracking-[-0.03em] text-white backdrop-blur-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-white/14"
               >
-                Agronómicos
+                Insumos informativos
               </a>
             </motion.div>
         </div>

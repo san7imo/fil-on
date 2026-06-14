@@ -49,7 +49,7 @@ const cards = [
       'text-[0.82rem] font-bold leading-[1.04] tracking-[-0.025em] sm:text-[0.9rem] lg:text-[0.78rem]',
   },
   {
-    title: 'Legal',
+    title: 'Secure',
     description:
       'Cumplimiento inteligente que asegura la viabilidad de la operación.',
     className: 'min-h-[12rem] lg:min-h-0',
@@ -60,7 +60,7 @@ const cards = [
       'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
   },
   {
-    title: 'Secure',
+    title: 'Control',
     description:
       'Infraestructura jurídica y regulatoria para escalar con seguridad, control y cumplimiento.',
     className: 'min-h-[11.6rem] lg:min-h-0',
@@ -84,7 +84,7 @@ const cards = [
 
 export function ServicesArchitectureSection() {
   return (
-    <section className="bg-[#f7f5f2] py-14 sm:py-16 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8">
+    <section id="aliados" className="bg-[#f7f5f2] py-14 sm:py-16 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8">
       <div className="mx-auto flex w-full max-w-[1180px] flex-col px-5 sm:px-6 lg:h-full lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 36 }}

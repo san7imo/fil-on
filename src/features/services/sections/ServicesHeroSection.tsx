@@ -90,16 +90,16 @@ export function ServicesHeroSection() {
               className="mt-9 flex flex-wrap gap-3"
             >
               <Link
-                to="/cotizaciones"
+                to="/contacto"
                 className="inline-flex min-h-11 items-center rounded-full bg-white px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-[#7b3412] transition hover:brightness-[0.98]"
               >
-                SOLICITAR COTIZACIÓN &gt;
+                HABLAR CON EL EQUIPO &gt;
               </Link>
               <Link
                 to="/contacto"
                 className="inline-flex min-h-11 items-center rounded-full border border-white/32 bg-white/10 px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-white transition hover:bg-white/14"
               >
-                CONVERSAR CON EL EQUIPO &gt;
+                VER CANALES &gt;
               </Link>
             </motion.div>
           </div>

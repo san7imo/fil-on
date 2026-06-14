@@ -1,17 +1,14 @@
 import type { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 import fondoHeroFooter from '@/assets/fondoheroyfooter.webp'
+import logoFil from '@/assets/logofil.webp'
 import { navigationItems } from '@/shared/config/navigation'
 import { siteConfig } from '@/shared/config/site'
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear()
-  const serviceLinks = [
-    'Fil-On Capital',
-    'Fil-On Tech',
-    'Fil-On Guardian',
-    'Fil-On LegalTech',
-  ]
+  const serviceLinks = ['Fil-On Tech', 'Fil-On Capital']
+  const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/\D/g, '')}`
 
   return (
     <footer className="relative overflow-hidden pb-7 pt-22 text-[#1f1714]">
@@ -26,15 +23,10 @@ export function SiteFooter() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(122,52,16,0.14)_0%,rgba(215,122,57,0.05)_42%,rgba(255,255,255,0.1)_100%)]" />
 
       <div className="page-shell relative">
-        <div className="grid gap-8 lg:grid-cols-[1.4fr_0.52fr_0.52fr_0.76fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.35fr_0.58fr_0.7fr_0.76fr]">
           <div className="max-w-[27rem]">
             <div className="mb-5">
-              <p className="text-[2.25rem] font-extrabold leading-none tracking-[-0.06em] text-black">
-                fil-On
-              </p>
-              <p className="mt-1 text-[1.18rem] font-medium leading-none text-[#2b3325]">
-                Tech
-              </p>
+              <img src={logoFil} alt="Fil-On Tech" className="h-auto w-[8.5rem] brightness-0" />
             </div>
 
             <p className="max-w-[24rem] text-[0.9rem] leading-[1.55] text-black/84">
@@ -53,15 +45,6 @@ export function SiteFooter() {
                 icon={<PhoneIcon />}
                 href={`tel:${siteConfig.phoneHref}`}
                 label={siteConfig.phone}
-              />
-              <FooterInfo
-                icon={<MapPinIcon />}
-                label={siteConfig.location}
-              />
-              <FooterInfo
-                icon={<ExternalLinkIcon />}
-                href={`https://${siteConfig.website}`}
-                label={siteConfig.website}
               />
             </div>
           </div>
@@ -85,7 +68,7 @@ export function SiteFooter() {
             <h3 className="mb-6 text-[1.35rem] font-semibold tracking-[-0.04em] text-black">
               Servicios
             </h3>
-            <ul className="space-y-4 text-[0.92rem] text-black/86">
+            <ul className="flex flex-wrap gap-x-5 gap-y-3 text-[0.92rem] text-black/86">
               {serviceLinks.map((service) => (
                 <li key={service}>
                   <NavLink to="/servicios" className="transition hover:text-black">
@@ -105,13 +88,15 @@ export function SiteFooter() {
                 Conversemos sobre soluciones financieras, operativas y
                 regulatorias para tu siguiente etapa de crecimiento.
               </p>
-              <NavLink
-                to="/contacto"
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-[0.9rem] font-medium text-[#178a52] transition hover:brightness-90"
               >
+                <WhatsAppIcon />
                 <span>Contactar ahora</span>
-                <ExternalLinkMini />
-              </NavLink>
+              </a>
             </div>
           </div>
         </div>
@@ -187,31 +172,11 @@ function PhoneIcon() {
   )
 }
 
-function MapPinIcon() {
+function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-[1rem] w-[1rem]" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 21s-6-5.33-6-11a6 6 0 1 1 12 0c0 5.67-6 11-6 11Z" />
-      <circle cx="12" cy="10" r="2.5" />
-    </svg>
-  )
-}
-
-function ExternalLinkIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-[1rem] w-[1rem]" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M14 3h7v7" />
-      <path d="M10 14 21 3" />
-      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
-    </svg>
-  )
-}
-
-function ExternalLinkMini() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-[0.8rem] w-[0.8rem]" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M14 3h7v7" />
-      <path d="M10 14 21 3" />
-      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+      <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Z" />
+      <path d="M8.8 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3 0 .5-.1.7l-.4.5c.7 1.2 1.6 2.1 2.9 2.8l.5-.5c.2-.2.4-.2.7-.1l1.7.8c.3.1.4.3.4.6v.5c0 .3 0 .5-.3.7-.6.4-1.3.6-2 .5-3-.4-6.2-3.5-6.6-6.5-.1-.7.1-1.4.3-1.7Z" />
     </svg>
   )
 }

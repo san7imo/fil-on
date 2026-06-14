@@ -58,12 +58,12 @@ export function HomeSocialImpactSection() {
               </h2>
 
               <p className="mt-4 max-w-[16rem] text-[0.98rem] font-bold leading-[1.08] text-white sm:text-[1.02rem]">
-                Creemos en las personas como motor de transformación.
+                Generamos impacto donde nace el desarrollo.
               </p>
               <p className="mt-2 max-w-[17.4rem] text-[0.93rem] font-semibold leading-[1.28] text-white sm:text-[0.96rem]">
-                Por eso, en FIL-ON llevamos educación, inclusión financiera y
-                prácticas responsables a las comunidades rurales para que
-                crezcan de manera justa y sostenible.
+                Construimos oportunidades sostenibles para comunidades y
+                territorios con iniciativas ambientales, inclusión financiera,
+                acceso a salud y proyectos sociales.
               </p>
 
               <Link

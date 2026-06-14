@@ -16,10 +16,6 @@ const sectors = [
     title: 'Minería',
     text: 'Herramientas para trazabilidad, control y cumplimiento en cadenas sensibles.',
   },
-  {
-    title: 'Industria',
-    text: 'Capacidades para escalar procesos, pagos y ejecución con visión operativa.',
-  },
 ]
 
 export function AboutSectorsSection() {
@@ -37,7 +33,7 @@ export function AboutSectorsSection() {
         </motion.h2>
 
         <div className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
-          <div className="grid gap-3 lg:h-[32rem] lg:grid-rows-3">
+          <div className="grid gap-3 lg:h-[32rem] lg:grid-rows-2">
             {sectors.map((sector, index) => (
               <motion.article
                 key={sector.title}
@@ -66,7 +62,7 @@ export function AboutSectorsSection() {
           >
             <img
               src={tresImagenes}
-              alt="Personas y sectores productivos de agro, minería e industria"
+              alt="Personas y sectores productivos de agro y minería"
               className="h-[24rem] w-full object-cover object-center sm:h-[30rem] lg:h-full"
             />
           </motion.div>

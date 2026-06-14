@@ -47,10 +47,10 @@ export function ServicesClosingSection() {
             className="mt-9 max-w-[42rem] overflow-hidden rounded-r-full rounded-l-[2px]"
           >
             <Link
-              to="/cotizaciones"
+              to="/contacto"
               className="relative flex h-[2.55rem] w-full items-center justify-end overflow-hidden rounded-r-full rounded-l-[2px] bg-[linear-gradient(90deg,#75310f_0%,#b8521d_42%,#df9154_76%,#edd4b8_100%)] px-6 pr-16 text-[0.9rem] font-medium uppercase italic tracking-[-0.03em] text-white transition hover:brightness-[1.03]"
             >
-              SOLICITAR UNA COTIZACIÓN &gt;
+              CONVERSAR CON EL EQUIPO &gt;
             </Link>
           </motion.div>
         </motion.div>
