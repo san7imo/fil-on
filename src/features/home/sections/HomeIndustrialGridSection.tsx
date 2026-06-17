@@ -13,8 +13,9 @@ const slowReveal = {
 const cards = [
   {
     title: 'Capital',
-    description:
-      'Suministro inteligente de recursos para potenciar operaciones de alto impacto.',
+    description: 'Suministramos los recursos',
+    overlayDescription:
+      'Suministro inteligente de recursos para potenciar operaciones de alto impacto. Integramos capital, liquidez y tecnología para garantizar el acceso oportuno a los recursos que impulsan el crecimiento sostenible del ecosistema agrominero.',
     className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
       'bottom-1 left-7 text-[4.15rem] tracking-[-0.08em] lg:text-[4.7rem]',
@@ -27,6 +28,8 @@ const cards = [
     title: 'Tech',
     description:
       'Liquidez conectada a la realidad de tu operación.',
+    overlayDescription:
+      'Diseñamos soluciones financieras que convierten la dinámica de tu operación en acceso a liquidez. A través de créditos, microcréditos y tarjetas inteligentes especializadas, impulsamos el crecimiento de empresas y personas que hacen parte del ecosistema minero.',
     className: 'min-h-[17rem] lg:min-h-0',
     titleClassName:
       'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[4.95rem]',
@@ -52,6 +55,8 @@ const cards = [
     title: 'Secure',
     description:
       'Operamos con confianza. Crecemos con cumplimiento.',
+    overlayDescription:
+      'Manejamos una plataforma que integra control, trazabilidad y cumplimiento normativo para garantizar operaciones seguras, transparentes y preparadas para escalar en un entorno cada vez más exigente.',
     className: 'min-h-[12rem] lg:min-h-0',
     titleClassName:
       'bottom-1 right-5 text-[4rem] tracking-[-0.08em] lg:text-[4.65rem]',
@@ -73,7 +78,9 @@ const cards = [
   {
     title: 'MOVI\nMIENTO',
     description:
-      'Convertimos la visión en acción para acelerar resultados y generar impacto sostenible.',
+      'Convertimos la visión en acción.',
+    overlayDescription:
+      'Impulsamos la gestión y ejecución de proyectos estratégicos mediante un modelo que integra recursos, tecnología y acompañamiento especializado para acelerar resultados y generar impacto sostenible.',
     className: 'min-h-[11.8rem] justify-end lg:min-h-0',
     titleClassName:
       'left-5 top-5 whitespace-pre-line text-[3.75rem] leading-[0.9] tracking-[-0.08em] lg:text-[4.55rem]',
@@ -152,6 +159,7 @@ export function HomeIndustrialGridSection() {
 type ServiceGhostCardProps = {
   title: string
   description: string
+  overlayDescription?: string
   className: string
   titleClassName: string
   contentClassName: string
@@ -165,6 +173,7 @@ type ServiceGhostCardProps = {
 function ServiceGhostCard({
   title,
   description,
+  overlayDescription,
   className,
   titleClassName,
   contentClassName,
@@ -180,8 +189,11 @@ function ServiceGhostCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ...slowReveal, delay: 0.18 + delay }}
       viewport={sectionViewport}
+      tabIndex={overlayDescription ? 0 : undefined}
       className={cn(
-        'relative overflow-hidden rounded-[1.8rem] bg-[#f1efec] px-6 py-5 shadow-[0_1px_0_rgba(255,255,255,0.55)_inset] transition duration-300 ease-out hover:-translate-y-0.5',
+        'group relative overflow-hidden rounded-[1.8rem] bg-[#f1efec] px-6 py-5 shadow-[0_1px_0_rgba(255,255,255,0.55)_inset] transition duration-300 ease-out hover:-translate-y-0.5',
+        overlayDescription &&
+          'cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8c3a15]/45',
         className,
       )}
     >
@@ -246,6 +258,14 @@ function ServiceGhostCard({
           aria-hidden="true"
           className="pointer-events-none absolute bottom-3 right-2 z-10 w-[18.5rem] max-w-[69%] lg:bottom-4 lg:right-2 lg:w-[20.5rem]"
         />
+      ) : null}
+
+      {overlayDescription ? (
+        <div className="absolute inset-0 z-20 flex items-center rounded-[1.8rem] bg-[#2b201b]/92 px-6 py-5 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100">
+          <p className="max-h-full overflow-y-auto pr-1 font-sans text-[0.78rem] font-bold leading-[1.35] tracking-[-0.025em] text-[#f7f5f2] sm:text-[0.86rem] lg:text-[0.8rem]">
+            {overlayDescription}
+          </p>
+        </div>
       ) : null}
     </motion.article>
   )

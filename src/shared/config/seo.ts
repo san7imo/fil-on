@@ -57,11 +57,11 @@ export const routeSeo: Record<string, SeoConfig> = {
     ],
   },
   '/cotizaciones': {
-    title: 'Centro de Inteligencia Fil-On | Indicadores de mercado',
+    title: 'Radar Fil-On | Actualidad minera, agroindustrial y de mercados',
     description:
-      'Actualidad, tendencias, análisis e indicadores de mercado para impulsar la transformación del ecosistema agrominero.',
+      'Información estratégica para entender los cambios que impactan la minería, la agroindustria y los mercados.',
     path: '/cotizaciones',
-    keywords: [...defaultKeywords, 'centro de inteligencia', 'indicadores de mercado', 'metales', 'agronómicos'],
+    keywords: [...defaultKeywords, 'Radar Fil-On', 'actualidad minera', 'agroindustria', 'indicadores de mercado'],
   },
   '/contacto': {
     title: 'Contacto Fil-On Tech | Hablemos de operación y capital',

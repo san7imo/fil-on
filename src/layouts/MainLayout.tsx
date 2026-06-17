@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
+import { FloatingWhatsAppButton } from '@/components/common/FloatingWhatsAppButton'
 import { SiteFooter } from '@/components/common/SiteFooter'
 import { SiteHeader } from '@/components/common/SiteHeader'
 
@@ -21,6 +22,7 @@ export function MainLayout() {
         </div>
       </main>
       <SiteFooter />
+      <FloatingWhatsAppButton />
     </div>
   )
 }

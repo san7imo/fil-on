@@ -64,7 +64,7 @@ export function QuoteHeroSection() {
               transition={{ duration: 1.15, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-[50rem] font-sans text-[2.85rem] font-extrabold leading-[0.94] tracking-[-0.06em] text-white sm:text-[3.65rem] lg:text-[4.8rem]"
             >
-              Centro de Inteligencia Fil-On.
+              Radar Fil-On.
             </motion.h1>
 
             <motion.p
@@ -73,8 +73,8 @@ export function QuoteHeroSection() {
               transition={{ duration: 0.95, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
               className="mt-7 max-w-[42rem] text-[0.98rem] font-semibold leading-[1.55] text-white/90 sm:text-[1.06rem]"
             >
-              Actualidad, tendencias, análisis e indicadores de mercado para
-              impulsar la transformación del ecosistema agrominero.
+              Información estratégica para entender los cambios que impactan la
+              minería, la agroindustria y los mercados.
             </motion.p>
 
             <motion.div

@@ -64,7 +64,7 @@ export function HomeWhyChooseSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative -mt-8 overflow-visible bg-[#f7f5f2] pb-0 pt-10 sm:-mt-10 sm:pt-12 lg:-mt-12 lg:pt-14"
+      className="relative -mt-8 overflow-visible bg-[#f7f5f2] pb-16 pt-10 sm:-mt-10 sm:pb-18 sm:pt-12 lg:-mt-12 lg:pb-20 lg:pt-14"
     >
       <motion.div
         style={{ rotate: rotation }}
@@ -128,7 +128,7 @@ export function HomeWhyChooseSection() {
           </Link>
         </motion.div>
 
-        <div className="relative z-20 mt-8 grid gap-7 md:grid-cols-2 xl:grid-cols-[repeat(4,minmax(0,13.8rem))] xl:justify-center xl:gap-10 -mb-20">
+        <div className="relative z-20 mt-8 grid gap-7 md:grid-cols-2 xl:grid-cols-[repeat(4,minmax(0,13.8rem))] xl:justify-center xl:gap-10">
           {cards.map((card, index) => (
             <motion.article
               key={card.ghostLines.join('-')}

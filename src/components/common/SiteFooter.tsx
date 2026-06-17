@@ -8,7 +8,6 @@ import { siteConfig } from '@/shared/config/site'
 export function SiteFooter() {
   const currentYear = new Date().getFullYear()
   const serviceLinks = ['Fil-On Tech', 'Fil-On Capital']
-  const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/\D/g, '')}`
 
   return (
     <footer className="relative overflow-hidden pb-7 pt-22 text-[#1f1714]">
@@ -23,7 +22,7 @@ export function SiteFooter() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(122,52,16,0.14)_0%,rgba(215,122,57,0.05)_42%,rgba(255,255,255,0.1)_100%)]" />
 
       <div className="page-shell relative">
-        <div className="grid gap-8 lg:grid-cols-[1.35fr_0.58fr_0.7fr_0.76fr]">
+        <div className="grid items-start gap-8 lg:grid-cols-[1.35fr_0.58fr_0.7fr]">
           <div className="max-w-[27rem]">
             <div className="mb-5">
               <img src={logoFil} alt="Fil-On Tech" className="h-auto w-[8.5rem] brightness-0" />
@@ -79,26 +78,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="lg:pt-[8.2rem]">
-            <div className="rounded-[0.9rem] border border-[#3f7e60]/52 bg-white/14 p-4 backdrop-blur-[2px]">
-              <h4 className="text-[1.25rem] font-semibold leading-[1.25] tracking-[-0.04em] text-[#178a52]">
-                ¿Listo para transformar tu negocio?
-              </h4>
-              <p className="mt-3 text-[0.86rem] leading-[1.5] text-black/78">
-                Conversemos sobre soluciones financieras, operativas y
-                regulatorias para tu siguiente etapa de crecimiento.
-              </p>
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-[0.9rem] font-medium text-[#178a52] transition hover:brightness-90"
-              >
-                <WhatsAppIcon />
-                <span>Contactar ahora</span>
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="mt-8 border-t border-black/16 pt-5">
@@ -168,15 +147,6 @@ function PhoneIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-[1rem] w-[1rem]" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72l.34 2.71a2 2 0 0 1-.57 1.71L7.09 9.91a16 16 0 0 0 7 7l1.77-1.79a2 2 0 0 1 1.71-.57l2.71.34A2 2 0 0 1 22 16.92z" />
-    </svg>
-  )
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-[1rem] w-[1rem]" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Z" />
-      <path d="M8.8 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.3 0 .5-.1.7l-.4.5c.7 1.2 1.6 2.1 2.9 2.8l.5-.5c.2-.2.4-.2.7-.1l1.7.8c.3.1.4.3.4.6v.5c0 .3 0 .5-.3.7-.6.4-1.3.6-2 .5-3-.4-6.2-3.5-6.6-6.5-.1-.7.1-1.4.3-1.7Z" />
     </svg>
   )
 }

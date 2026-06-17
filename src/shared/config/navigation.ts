@@ -16,7 +16,7 @@ export const navigationItems = [
     href: '/servicios#aliados',
   },
   {
-    label: 'Inteligencia',
+    label: 'Actualidad',
     href: '/cotizaciones',
   },
   {

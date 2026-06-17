@@ -50,7 +50,7 @@ export function ContactClosingSection() {
               to="/cotizaciones"
               className="inline-flex min-h-11 items-center rounded-full border border-white/28 bg-white/8 px-6 text-[0.84rem] font-bold uppercase italic tracking-[-0.02em] text-white transition hover:bg-white/14"
             >
-              VER COTIZACIONES &gt;
+              VER ACTUALIDAD &gt;
             </Link>
           </div>
         </motion.div>
