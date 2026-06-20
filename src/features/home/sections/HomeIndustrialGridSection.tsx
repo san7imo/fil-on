@@ -27,29 +27,17 @@ const cards = [
   {
     title: 'Tech',
     description:
-      'Liquidez conectada a la realidad de tu operación.',
+      'Tarjetas corporativas y control del gasto operativo.',
     overlayDescription:
       'Diseñamos soluciones financieras que convierten la dinámica de tu operación en acceso a liquidez. A través de créditos, microcréditos y tarjetas inteligentes especializadas, impulsamos el crecimiento de empresas y personas que hacen parte del ecosistema minero.',
-    className: 'min-h-[17rem] lg:min-h-0',
-    titleClassName:
-      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[4.95rem]',
-    contentClassName:
-      'absolute left-[7.3rem] top-[7.6rem] right-6 max-w-[18rem] lg:left-[7.8rem] lg:top-[8.2rem] lg:max-w-[18.5rem]',
-    descriptionClassName:
-      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-  },
-  {
-    title: 'Guardian',
-    description:
-      'Tarjetas corporativas y control del gasto operativo.',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
-      'left-4 top-1/2 -translate-y-1/2 text-[3.65rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] lg:text-[4.5rem]',
+      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[5.2rem]',
     contentClassName: '',
     hasCardsImage: true,
-    isGuardianCard: true,
+    isTechCard: true,
     descriptionClassName:
-      'text-[0.94rem] font-bold leading-[1.05] tracking-[-0.03em] sm:text-[1rem] lg:text-[0.86rem]',
+      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
   },
   {
     title: 'Secure',
@@ -63,17 +51,6 @@ const cards = [
     contentClassName: 'absolute left-6 top-5 max-w-[14.9rem] lg:max-w-[15.4rem]',
     descriptionClassName:
       'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-  },
-  {
-    title: 'Control',
-    description:
-      'Plataforma que integra control, trazabilidad y cumplimiento normativo.',
-    className: 'min-h-[11.6rem] lg:min-h-0',
-    titleClassName:
-      'bottom-1 right-5 text-[3.45rem] tracking-[-0.08em] lg:text-[4.05rem]',
-    contentClassName: 'absolute left-6 right-6 top-5 max-w-[16.8rem] lg:right-8 lg:max-w-[17.2rem]',
-    descriptionClassName:
-      'text-[0.88rem] font-bold leading-[1.08] tracking-[-0.025em] sm:text-[0.93rem] lg:text-[0.82rem]',
   },
   {
     title: 'MOVI\nMIENTO',
@@ -104,16 +81,14 @@ export function HomeIndustrialGridSection() {
         </motion.h2>
 
         <div className="mt-8 grid gap-4 lg:min-h-0 lg:flex-1 lg:grid-cols-[1fr_1fr]">
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.23fr_0.55fr_0.22fr]">
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.3fr_0.7fr]">
             <ServiceGhostCard {...cards[0]} delay={0.06} />
-            <ServiceGhostCard {...cards[2]} delay={0.16} />
-            <ServiceGhostCard {...cards[4]} delay={0.26} />
+            <ServiceGhostCard {...cards[1]} delay={0.16} />
           </div>
 
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.42fr_0.22fr_0.36fr]">
-            <ServiceGhostCard {...cards[1]} delay={0.12} />
-            <ServiceGhostCard {...cards[3]} delay={0.22} />
-            <ServiceGhostCard {...cards[5]} delay={0.34} />
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.45fr_0.55fr]">
+            <ServiceGhostCard {...cards[2]} delay={0.22} />
+            <ServiceGhostCard {...cards[3]} delay={0.34} />
           </div>
         </div>
 
@@ -166,7 +141,7 @@ type ServiceGhostCardProps = {
   descriptionClassName?: string
   hasCardsImage?: boolean
   isMotionCard?: boolean
-  isGuardianCard?: boolean
+  isTechCard?: boolean
   delay?: number
 }
 
@@ -180,7 +155,7 @@ function ServiceGhostCard({
   descriptionClassName,
   hasCardsImage = false,
   isMotionCard = false,
-  isGuardianCard = false,
+  isTechCard = false,
   delay = 0,
 }: ServiceGhostCardProps) {
   return (
@@ -206,10 +181,10 @@ function ServiceGhostCard({
         {title}
       </span>
 
-      {isGuardianCard ? (
+      {isTechCard ? (
         <div className="relative z-10 flex h-full flex-col">
-          <div className="flex min-h-full flex-col pl-[6rem] pr-4 pt-7 pb-6 lg:pl-[6.8rem] lg:pr-5 lg:pt-8 lg:pb-7">
-            <div className="mx-auto max-w-[14.4rem] text-center lg:max-w-[15.8rem]">
+          <div className="flex min-h-full flex-col px-4 pt-[6.8rem] pb-6 lg:px-5 lg:pt-[7.4rem] lg:pb-7">
+            <div className="mx-auto max-w-[14.8rem] text-center lg:max-w-[16rem]">
               <p
                 className={cn(
                   'font-sans text-[#292322]',
@@ -221,12 +196,12 @@ function ServiceGhostCard({
               </p>
             </div>
 
-            <div className="flex flex-1 items-start justify-center pb-12 pt-0">
+            <div className="flex flex-1 items-start justify-center pb-10 pt-4">
               <img
                 src={tarjetas}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none -translate-y-2 w-[12.4rem] max-w-full lg:w-[14.2rem]"
+                className="pointer-events-none w-[12.4rem] max-w-full lg:w-[14.4rem]"
               />
             </div>
           </div>
@@ -251,7 +226,7 @@ function ServiceGhostCard({
         </div>
       )}
 
-      {hasCardsImage && !isGuardianCard ? (
+      {hasCardsImage && !isTechCard ? (
         <img
           src={tarjetas}
           alt=""
@@ -261,8 +236,8 @@ function ServiceGhostCard({
       ) : null}
 
       {overlayDescription ? (
-        <div className="absolute inset-0 z-20 flex items-center rounded-[1.8rem] bg-[#2b201b]/92 px-6 py-5 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100">
-          <p className="max-h-full overflow-y-auto pr-1 font-sans text-[0.78rem] font-bold leading-[1.35] tracking-[-0.025em] text-[#f7f5f2] sm:text-[0.86rem] lg:text-[0.8rem]">
+        <div className="absolute inset-0 z-20 flex items-start rounded-[1.8rem] bg-[#2b201b]/92 px-5 py-5 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100 sm:px-6">
+          <p className="max-h-full overflow-y-auto pr-1 font-sans text-[0.76rem] font-bold leading-[1.28] tracking-[-0.025em] text-[#f7f5f2] sm:text-[0.84rem] lg:text-[0.78rem]">
             {overlayDescription}
           </p>
         </div>

@@ -2,6 +2,7 @@ import { Seo } from '@/components/common/Seo'
 import { QuoteClosingSection } from '@/features/quote/sections/QuoteClosingSection'
 import { QuoteHeroSection } from '@/features/quote/sections/QuoteHeroSection'
 import { QuoteMarketSection } from '@/features/quote/sections/QuoteMarketSection'
+import { QuoteTrmSection } from '@/features/quote/sections/QuoteTrmSection'
 import { routeSeo } from '@/shared/config/seo'
 
 export function QuotePage() {
@@ -9,6 +10,7 @@ export function QuotePage() {
     <>
       <Seo config={routeSeo['/cotizaciones']} />
       <QuoteHeroSection />
+      <QuoteTrmSection />
       <QuoteMarketSection
         id="metales-preciosos"
         kind="metals"

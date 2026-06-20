@@ -35,6 +35,7 @@ const sectionFallbacks = {
 
 export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps) {
   const fallback = sectionFallbacks[kind]
+  const [isLoading, setIsLoading] = useState(true)
   const [result, setResult] = useState<QuoteLoadResult>({
     quotes: fallback,
     status: 'fallback',
@@ -48,9 +49,13 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
     sectionLoaders[kind]().then((nextResult) => {
       if (!active) return
       setResult(nextResult)
+      setIsLoading(false)
       setActiveId((current) => nextResult.quotes.some((quote) => quote.id === current)
         ? current
         : nextResult.quotes[0]?.id)
+    }).catch(() => {
+      if (!active) return
+      setIsLoading(false)
     })
 
     return () => {
@@ -78,6 +83,8 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
         timeStyle: 'short',
       }).format(new Date(latestUpdate))
     : 'Sin fecha disponible'
+  const displayedStatus = isLoading ? 'loading' : result.status
+  const displayedUpdatedLabel = isLoading ? 'Consultando fuente' : `Actualizado ${updatedLabel}`
 
   return (
     <section
@@ -108,7 +115,7 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
           className="grid gap-5 lg:grid-cols-[0.76fr_1fr] lg:items-end"
         >
           <div>
-            <LiveBadge status={result.status} />
+            <LiveBadge status={displayedStatus} />
             <h2 className="mt-3 max-w-[32rem] font-sans text-[2.05rem] font-extrabold leading-[0.94] tracking-[-0.06em] sm:text-[2.65rem] lg:text-[2.95rem]">
               {title}
             </h2>
@@ -120,7 +127,7 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
             </p>
             <div className="mt-3 flex flex-wrap gap-2 text-[0.64rem] font-extrabold uppercase tracking-[0.16em] text-white/54">
               <span>{result.sourceLabel}</span>
-              <span>Actualizado {updatedLabel}</span>
+              <span>{displayedUpdatedLabel}</span>
             </div>
           </div>
         </motion.div>
@@ -165,15 +172,22 @@ export function QuoteMarketSection({ id, title, text, kind }: MarketSectionProps
   )
 }
 
-function LiveBadge({ status }: { status: QuoteLoadResult['status'] }) {
+function LiveBadge({ status }: { status: QuoteLoadResult['status'] | 'loading' }) {
+  const isLive = status === 'live'
+
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-white/16 bg-white/8 px-3.5 py-1.5 text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-white/78">
       <span className="relative flex h-2.5 w-2.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fd3d8] opacity-60" />
+        {isLive ? (
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fd3d8] opacity-60" />
+        ) : null}
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#8fd3d8]" />
       </span>
-      En vivo
-      {status === 'fallback' && <span className="text-white/42">sincronizando</span>}
+      {status === 'loading'
+        ? 'Consultando fuente'
+        : isLive
+          ? 'Fuente activa'
+          : 'Último dato disponible'}
     </div>
   )
 }
