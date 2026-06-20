@@ -32,7 +32,7 @@ const cards = [
       'Diseñamos soluciones financieras que convierten la dinámica de tu operación en acceso a liquidez. A través de créditos, microcréditos y tarjetas inteligentes especializadas, impulsamos el crecimiento de empresas y personas que hacen parte del ecosistema minero.',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
-      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[5.2rem]',
+      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[5rem]',
     contentClassName: '',
     hasCardsImage: true,
     isTechCard: true,
@@ -182,29 +182,25 @@ function ServiceGhostCard({
       </span>
 
       {isTechCard ? (
-        <div className="relative z-10 flex h-full flex-col">
-          <div className="flex min-h-full flex-col px-4 pt-[6.8rem] pb-6 lg:px-5 lg:pt-[7.4rem] lg:pb-7">
-            <div className="mx-auto max-w-[14.8rem] text-center lg:max-w-[16rem]">
-              <p
-                className={cn(
-                  'font-sans text-[#292322]',
-                  descriptionClassName ??
-                    'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-                )}
-              >
-                {description}
-              </p>
-            </div>
-
-            <div className="flex flex-1 items-start justify-center pb-10 pt-4">
-              <img
-                src={tarjetas}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none w-[12.4rem] max-w-full lg:w-[14.4rem]"
-              />
-            </div>
+        <div className="relative z-10 h-full min-h-[27rem] lg:min-h-0">
+          <div className="absolute left-[12.9rem] right-5 top-[4.45rem] max-w-[16.8rem] text-left sm:left-[14.8rem] lg:left-[15.6rem] lg:top-[4.25rem]">
+            <p
+              className={cn(
+                'font-sans text-[#292322]',
+                descriptionClassName ??
+                  'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
+              )}
+            >
+              {description}
+            </p>
           </div>
+
+          <img
+            src={tarjetas}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-[6.1rem] w-[15.4rem] max-w-[72%] -translate-x-1/2 lg:top-[5.25rem] lg:w-[16.2rem]"
+          />
         </div>
       ) : isMotionCard ? (
         <div className="absolute bottom-5 left-6 right-6 z-10 max-w-[17rem]">
@@ -236,8 +232,8 @@ function ServiceGhostCard({
       ) : null}
 
       {overlayDescription ? (
-        <div className="absolute inset-0 z-20 flex items-start rounded-[1.8rem] bg-[#2b201b]/92 px-5 py-5 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100 sm:px-6">
-          <p className="max-h-full overflow-y-auto pr-1 font-sans text-[0.76rem] font-bold leading-[1.28] tracking-[-0.025em] text-[#f7f5f2] sm:text-[0.84rem] lg:text-[0.78rem]">
+        <div className="absolute inset-0 z-20 flex items-center rounded-[1.8rem] bg-[#2b201b]/92 px-6 py-6 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100 sm:px-8 sm:py-7">
+          <p className="max-h-full w-full overflow-y-auto pr-1 font-sans text-[0.92rem] font-bold leading-[1.24] tracking-[-0.035em] text-[#f7f5f2] sm:text-[1.02rem] lg:text-[0.95rem] xl:text-[1rem]">
             {overlayDescription}
           </p>
         </div>
