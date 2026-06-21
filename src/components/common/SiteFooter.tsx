@@ -7,7 +7,10 @@ import { siteConfig } from '@/shared/config/site'
 
 export function SiteFooter() {
   const currentYear = new Date().getFullYear()
-  const serviceLinks = ['Fil-On Tech', 'Fil-On Capital']
+  const serviceLinks = [
+    { label: 'Fil-On Tech', href: '/servicios', external: false },
+    { label: 'Fil-On Secure', href: 'https://fil-onsecure.com/', external: true },
+  ]
 
   return (
     <footer className="relative overflow-hidden pb-7 pt-22 text-[#1f1714]">
@@ -69,10 +72,21 @@ export function SiteFooter() {
             </h3>
             <ul className="flex flex-wrap gap-x-5 gap-y-3 text-[0.92rem] text-black/86">
               {serviceLinks.map((service) => (
-                <li key={service}>
-                  <NavLink to="/servicios" className="transition hover:text-black">
-                    {service}
-                  </NavLink>
+                <li key={service.label}>
+                  {service.external ? (
+                    <a
+                      href={service.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition hover:text-black"
+                    >
+                      {service.label}
+                    </a>
+                  ) : (
+                    <NavLink to={service.href} className="transition hover:text-black">
+                      {service.label}
+                    </NavLink>
+                  )}
                 </li>
               ))}
             </ul>

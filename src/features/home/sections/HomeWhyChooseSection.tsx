@@ -16,18 +16,20 @@ const cards = [
     ghostLines: ['INCLUSIÓN', 'FINANCIERA'],
     accentLine: 1,
     description:
-      'Democratizamos el acceso a soluciones financieras para miles de mineros y sus familias.',
+      'Acercamos soluciones financieras a quienes mueven la industria, impulsando el progreso de miles de mineros, sus familias y sus comunidades.',
     className: 'xl:min-h-[29rem] xl:translate-y-10',
     contentClassName: 'pt-18',
+    descriptionClassName: 'max-w-[13.4rem] text-[0.78rem] leading-[1.3]',
   },
   {
     icon: 'device',
     ghostLines: ['ALIANZAS', 'OPERATIVAS'],
     accentLine: 1,
     description:
-      'Integramos tecnología, entidades financieras, operadores, comercializadores y aliados especializados.',
+      'Somos el punto de encuentro de una nueva generación de aliados que, a través de la tecnología y la confianza, están construyendo el ecosistema que la minería necesita para prosperar.',
     className: 'xl:min-h-[23.8rem]',
     contentClassName: 'pt-26',
+    descriptionClassName: 'max-w-[13.2rem] text-[0.76rem] leading-[1.28]',
   },
   {
     icon: 'gear',
@@ -43,9 +45,10 @@ const cards = [
     ghostLines: ['SOSTENIBILIDAD Y', 'FUTURO'],
     accentLine: 1,
     description:
-      'Construimos el futuro de una minería responsable con conservación ambiental y desarrollo comunitario.',
+      'Construimos una nueva generación de minería responsable, donde la tecnología, la conservación y el desarrollo de las comunidades crean prosperidad sostenible.',
     className: 'xl:min-h-[29rem] xl:translate-y-10',
     contentClassName: 'pt-20',
+    descriptionClassName: 'max-w-[13.2rem] text-[0.78rem] leading-[1.28]',
     highlighted: true,
   },
 ]
@@ -106,11 +109,12 @@ export function HomeWhyChooseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ...reveal, delay: 0.14 }}
           viewport={viewport}
-          className="mx-auto mt-5 max-w-[38rem] text-center font-sans text-[1rem] font-extrabold leading-[1.16] tracking-[-0.03em] text-[#1f1614] sm:text-[1.12rem]"
+          className="mx-auto mt-5 max-w-[50rem] text-center font-sans text-[0.92rem] font-extrabold uppercase leading-[1.22] tracking-[-0.03em] text-[#1f1614] sm:text-[1rem] lg:text-[1.08rem]"
         >
-          Somos la reinvención de la industria, porque creemos que la
-          innovación no solo transforma procesos, sino también la vida de las
-          personas y el futuro de nuestras comunidades.
+          Reinventamos la industria minera desde una visión más humana, donde
+          la tecnología se convierte en una herramienta para generar
+          prosperidad, impulsar la inclusión financiera y construir un futuro
+          sostenible para las personas, las comunidades y el territorio.
         </motion.p>
 
         <motion.div
@@ -147,7 +151,12 @@ export function HomeWhyChooseSection() {
               </div>
 
               <div className={cn('relative z-10', card.contentClassName)}>
-                <p className="max-w-[9.8rem] text-[0.82rem] font-extrabold uppercase leading-[1.42] text-[#1a1412]">
+                <p
+                  className={cn(
+                    'max-w-[9.8rem] text-[0.82rem] font-extrabold uppercase leading-[1.42] text-[#1a1412]',
+                    card.descriptionClassName,
+                  )}
+                >
                   {card.description}
                 </p>
               </div>

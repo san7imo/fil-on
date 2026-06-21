@@ -9,24 +9,29 @@ const reveal = {
 const services = [
   {
     label: 'Capital',
-    title: 'Liquidez para operar.',
-    description:
-      'Alternativas financieras para compra, expansión y flujo de caja.',
-    capabilities: ['Créditos', 'Factoring', 'Leasing', 'Confirming'],
-  },
-  {
-    label: 'Tech',
     title: 'Pagos y gestión digital.',
     description:
       'Herramientas para dispersar recursos, pagar y gestionar operación.',
     capabilities: ['Dispersión', 'Pasarela de pagos', 'Servicios digitales'],
   },
   {
-    label: 'Guardian',
-    title: 'Control del gasto.',
+    label: 'Tech',
+    title: 'Infraestructura inteligente para conectar y potenciar el ecosistema.',
     description:
-      'Tarjetas corporativas, límites claros y seguimiento de uso.',
-    capabilities: ['Tarjetas corporativas', 'Control operativo', 'Seguimiento'],
+      'Alternativas financieras para compra, expansión y flujo de caja.',
+    capabilities: ['Créditos', 'Factoring', 'Leasing', 'Confirming'],
+  },
+  {
+    label: 'Root',
+    title: 'Responsabilidad social.',
+    description: '',
+    capabilities: [
+      'Educación',
+      'Salud',
+      'Iniciativas ambientales',
+      'Pólizas',
+      'Inclusión financiera',
+    ],
   },
   {
     label: 'Secure',
@@ -79,9 +84,11 @@ export function ServicesDetailSection() {
                   </div>
                 </div>
 
-                <p className="mt-4 max-w-[28rem] text-[0.9rem] font-semibold leading-[1.45] text-white/84">
-                  {service.description}
-                </p>
+                {service.description ? (
+                  <p className="mt-4 max-w-[28rem] text-[0.9rem] font-semibold leading-[1.45] text-white/84">
+                    {service.description}
+                  </p>
+                ) : null}
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {service.capabilities.map((capability) => (

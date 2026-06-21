@@ -79,7 +79,7 @@ export function ContactProfileCard({ profile }: ContactProfileCardProps) {
       label: 'WhatsApp',
       href: buildWhatsAppHref(profile),
       icon: MessageCircle,
-      className: 'bg-[#178a52] text-white shadow-[0_18px_40px_rgba(23,138,82,0.26)] hover:bg-[#116b40]',
+      className: 'bg-[#8f3a15] text-white shadow-[0_18px_40px_rgba(143,58,21,0.28)] hover:bg-[#7b3412]',
       external: true,
     },
     {

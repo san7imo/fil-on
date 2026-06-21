@@ -59,7 +59,7 @@ export function ServicesHeroSection() {
       />
 
       <div className="mx-auto flex min-h-screen w-full max-w-[1280px] items-center px-5 pb-20 pt-[8.6rem] sm:px-6 sm:pt-[9.2rem] lg:px-7 lg:pb-24 lg:pt-[10rem]">
-        <div className="grid w-full gap-10 lg:grid-cols-[0.98fr_0.5fr] lg:items-end">
+        <div className="w-full">
           <div className="relative z-10 max-w-[52rem] lg:pl-[6.5rem]">
             <motion.h1
               initial={{ opacity: 0, x: -48 }}
@@ -104,32 +104,6 @@ export function ServicesHeroSection() {
             </motion.div>
           </div>
 
-          <motion.article
-            initial={{ opacity: 0, y: 34 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.05, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 hidden rounded-[1.8rem] border border-white/14 bg-[rgba(255,255,255,0.1)] px-6 py-6 text-white shadow-[0_26px_60px_rgba(39,17,7,0.18)] backdrop-blur-[3px] lg:block"
-          >
-            <div className="grid gap-5">
-              <div>
-                <p className="text-[1.72rem] font-extrabold leading-none tracking-[-0.06em]">
-                  Liquidez
-                </p>
-                <p className="mt-2 text-[0.88rem] font-semibold leading-[1.5] text-white/78">
-                  Crédito, factoring, leasing y confirming para sostener movimiento.
-                </p>
-              </div>
-              <div className="h-px bg-white/14" />
-              <div>
-                <p className="text-[1.72rem] font-extrabold leading-none tracking-[-0.06em]">
-                  Operación
-                </p>
-                <p className="mt-2 text-[0.88rem] font-semibold leading-[1.5] text-white/78">
-                  Dispersión, pagos, tarjetas corporativas y control de uso.
-                </p>
-              </div>
-            </div>
-          </motion.article>
         </div>
       </div>
     </section>

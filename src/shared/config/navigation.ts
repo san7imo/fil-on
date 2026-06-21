@@ -12,11 +12,7 @@ export const navigationItems = [
     href: '/servicios',
   },
   {
-    label: 'Aliados',
-    href: '/servicios#aliados',
-  },
-  {
-    label: 'Actualidad',
+    label: 'Radar',
     href: '/cotizaciones',
   },
   {

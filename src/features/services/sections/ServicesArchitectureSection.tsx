@@ -1,7 +1,11 @@
-import { motion } from 'motion/react'
+import { useRef } from 'react'
+import { motion, type MotionValue, useScroll, useTransform } from 'motion/react'
 import { Link } from 'react-router-dom'
 import fondoGeometrico from '@/assets/figurageometricas-porque.webp'
-import tarjetas from '@/assets/tarjetas.webp'
+import iconCumplimiento from '@/assets/iconos-cards/11Recurso 35.png'
+import iconOperacion from '@/assets/iconos-cards/13Recurso 13.png'
+import iconLogistica from '@/assets/iconos-cards/23Recurso 23.png'
+import iconTecnologia from '@/assets/iconos-cards/9Recurso 9 (2).png'
 import { cn } from '@/shared/lib/cn'
 
 const viewport = { once: true, amount: 0.28 }
@@ -12,79 +16,53 @@ const reveal = {
 
 const cards = [
   {
-    title: 'Capital',
-    description:
-      'Liquidez, tecnología y cumplimiento integrados para operar con control y trazabilidad.',
+    title: 'Operación',
+    icon: iconOperacion,
+    iconClassName: 'right-5 top-5',
     className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
-      'bottom-1 left-7 text-[4.15rem] tracking-[-0.08em] lg:text-[4.7rem]',
-    contentClassName:
-      'absolute left-[58%] right-6 top-1/2 max-w-[10.4rem] -translate-y-1/2 text-left lg:left-[56%] lg:right-8 lg:max-w-[11.2rem]',
-    descriptionClassName:
-      'text-[0.88rem] font-bold leading-[1.08] tracking-[-0.025em] sm:text-[0.93rem] lg:text-[0.82rem]',
+      'bottom-1 left-7 text-[3.35rem] tracking-[-0.08em] sm:text-[4.15rem] lg:text-[4.7rem]',
   },
   {
-    title: 'Tech',
-    description:
-      'Soluciones de tecnología financiera y de gestión para potenciar el sector agrominero.',
+    title: 'Tecnología',
+    icon: iconTecnologia,
+    iconClassName: 'bottom-5 right-5',
     className: 'min-h-[17rem] lg:min-h-0',
     titleClassName:
-      'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[4.95rem]',
-    contentClassName:
-      'absolute left-[7.3rem] top-[7.6rem] right-6 max-w-[18rem] lg:left-[7.8rem] lg:top-[8.2rem] lg:max-w-[18.5rem]',
-    descriptionClassName:
-      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
+      'left-6 top-5 text-[3.05rem] tracking-[-0.08em] sm:text-[4.2rem] lg:text-[4.65rem]',
   },
   {
-    title: 'Guardian',
-    description:
-      'Tarjetas corporativas y control del gasto operativo.',
+    title: 'Logística',
+    icon: iconLogistica,
+    iconClassName: 'bottom-5 left-5',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
-      'left-4 top-1/2 -translate-y-1/2 text-[3.45rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] lg:text-[4.25rem]',
-    contentClassName: '',
-    hasCardsImage: true,
-    isGuardianCard: true,
-    descriptionClassName:
-      'text-[0.82rem] font-bold leading-[1.04] tracking-[-0.025em] sm:text-[0.9rem] lg:text-[0.78rem]',
+      'left-4 top-1/2 -translate-y-1/2 text-[3rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] sm:text-[3.45rem] lg:text-[4.25rem]',
   },
   {
-    title: 'Secure',
-    description:
-      'Cumplimiento inteligente que asegura la viabilidad de la operación.',
+    title: 'Cumplimiento',
+    icon: iconCumplimiento,
+    iconClassName: 'left-5 top-5',
     className: 'min-h-[12rem] lg:min-h-0',
     titleClassName:
-      'bottom-1 right-5 text-[4rem] tracking-[-0.08em] lg:text-[4.65rem]',
-    contentClassName: 'absolute left-6 top-5 max-w-[14.9rem] lg:max-w-[15.4rem]',
-    descriptionClassName:
-      'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-  },
-  {
-    title: 'Control',
-    description:
-      'Infraestructura jurídica y regulatoria para escalar con seguridad, control y cumplimiento.',
-    className: 'min-h-[11.6rem] lg:min-h-0',
-    titleClassName:
-      'bottom-1 right-5 text-[3.45rem] tracking-[-0.08em] lg:text-[4.05rem]',
-    contentClassName:
-      'absolute left-6 right-6 top-5 max-w-[16.8rem] lg:right-8 lg:max-w-[17.2rem]',
-    descriptionClassName:
-      'text-[0.88rem] font-bold leading-[1.08] tracking-[-0.025em] sm:text-[0.93rem] lg:text-[0.82rem]',
-  },
-  {
-    title: 'MOVI\nMIENTO',
-    description: '',
-    className: 'min-h-[11.8rem] justify-end lg:min-h-0',
-    titleClassName:
-      'left-5 top-5 whitespace-pre-line text-[3.75rem] leading-[0.9] tracking-[-0.08em] lg:text-[4.55rem]',
-    contentClassName: '',
-    isMotionCard: true,
+      'bottom-1 right-5 text-[2.45rem] tracking-[-0.08em] sm:text-[3.25rem] lg:text-[3.85rem]',
   },
 ]
 
 export function ServicesArchitectureSection() {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const iconRotate = useTransform(scrollYProgress, [0, 1], [0, 360])
+
   return (
-    <section id="aliados" className="bg-[#f7f5f2] py-14 sm:py-16 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8">
+    <section
+      ref={sectionRef}
+      id="aliados"
+      className="bg-[#f7f5f2] py-14 sm:py-16 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8"
+    >
       <div className="mx-auto flex w-full max-w-[1180px] flex-col px-5 sm:px-6 lg:h-full lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 36 }}
@@ -93,30 +71,18 @@ export function ServicesArchitectureSection() {
           viewport={viewport}
           className="mx-auto max-w-[74rem] text-center font-sans text-[1.85rem] font-extrabold leading-[0.98] tracking-[-0.055em] text-[#ea928d] sm:text-[2.25rem] lg:text-[2.65rem] xl:text-[2.9rem]"
         >
-          Capital, tecnología y cumplimiento conectados.
+          Soluciones que conectan, activan y hacen crecer el ecosistema minero.
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ ...reveal, delay: 0.12 }}
-          viewport={viewport}
-          className="mx-auto mt-3 max-w-[45rem] text-center text-[0.88rem] font-semibold leading-[1.42] text-[#201614]/76"
-        >
-          Capacidades integradas para financiar, pagar, controlar y demostrar trazabilidad.
-        </motion.p>
-
         <div className="mt-5 grid gap-4 lg:min-h-0 lg:flex-1 lg:grid-cols-[1fr_1fr]">
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.22fr_0.56fr_0.22fr]">
-            <ServiceGhostCard {...cards[0]} delay={0.06} />
-            <ServiceGhostCard {...cards[2]} delay={0.16} />
-            <ServiceGhostCard {...cards[4]} delay={0.26} />
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.28fr_0.72fr]">
+            <ServiceGhostCard {...cards[0]} delay={0.06} iconRotate={iconRotate} />
+            <ServiceGhostCard {...cards[2]} delay={0.16} iconRotate={iconRotate} />
           </div>
 
-          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.42fr_0.22fr_0.36fr]">
-            <ServiceGhostCard {...cards[1]} delay={0.12} />
-            <ServiceGhostCard {...cards[3]} delay={0.22} />
-            <ServiceGhostCard {...cards[5]} delay={0.34} />
+          <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.6fr_0.4fr]">
+            <ServiceGhostCard {...cards[1]} delay={0.12} iconRotate={iconRotate} />
+            <ServiceGhostCard {...cards[3]} delay={0.22} iconRotate={iconRotate} />
           </div>
         </div>
 
@@ -159,27 +125,21 @@ export function ServicesArchitectureSection() {
 
 type ServiceGhostCardProps = {
   title: string
-  description: string
+  icon: string
+  iconClassName?: string
+  iconRotate: MotionValue<number>
   className: string
   titleClassName: string
-  contentClassName: string
-  descriptionClassName?: string
-  hasCardsImage?: boolean
-  isMotionCard?: boolean
-  isGuardianCard?: boolean
   delay?: number
 }
 
 function ServiceGhostCard({
   title,
-  description,
+  icon,
+  iconClassName,
+  iconRotate,
   className,
   titleClassName,
-  contentClassName,
-  descriptionClassName,
-  hasCardsImage = false,
-  isMotionCard = false,
-  isGuardianCard = false,
   delay = 0,
 }: ServiceGhostCardProps) {
   return (
@@ -202,53 +162,16 @@ function ServiceGhostCard({
         {title}
       </span>
 
-      {isGuardianCard ? (
-        <div className="relative z-10 flex h-full flex-col">
-          <div className="flex min-h-full flex-col pl-[6rem] pr-4 pt-4 pb-3 lg:pl-[6.8rem] lg:pr-5 lg:pt-5 lg:pb-4">
-            <div className="mx-auto max-w-[13rem] text-center lg:max-w-[14.2rem]">
-              <p
-                className={cn(
-                  'font-sans text-[#292322]',
-                  descriptionClassName ??
-                    'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-                )}
-              >
-                {description}
-              </p>
-            </div>
-
-            <div className="flex flex-1 items-start justify-center overflow-hidden pb-0 pt-1">
-              <img
-                src={tarjetas}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none w-[10.6rem] max-w-full object-contain lg:w-[12.2rem]"
-              />
-            </div>
-          </div>
-        </div>
-      ) : isMotionCard ? null : (
-        <div className={cn('relative z-10', contentClassName)}>
-          <p
-            className={cn(
-              'font-sans text-[#292322]',
-              descriptionClassName ??
-                'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-            )}
-          >
-            {description}
-          </p>
-        </div>
-      )}
-
-      {hasCardsImage && !isGuardianCard ? (
-        <img
-          src={tarjetas}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-3 right-2 z-10 w-[18.5rem] max-w-[69%] lg:bottom-4 lg:right-2 lg:w-[20.5rem]"
-        />
-      ) : null}
+      <motion.img
+        src={icon}
+        alt=""
+        aria-hidden="true"
+        style={{ rotate: iconRotate }}
+        className={cn(
+          'pointer-events-none absolute z-10 h-12 w-12 object-contain opacity-75 mix-blend-multiply sm:h-14 sm:w-14',
+          iconClassName,
+        )}
+      />
     </motion.article>
   )
 }

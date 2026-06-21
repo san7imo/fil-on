@@ -1,6 +1,11 @@
-import { motion } from 'motion/react'
+import { useRef } from 'react'
+import { motion, type MotionValue, useScroll, useTransform } from 'motion/react'
 import { Link } from 'react-router-dom'
 import fondoGeometrico from '@/assets/figurageometricas-porque.webp'
+import iconCapital from '@/assets/iconos-cards/10Recurso 34.png'
+import iconTech from '@/assets/iconos-cards/12Recurso 24.png'
+import iconSecure from '@/assets/iconos-cards/13Recurso 13.png'
+import iconMovimiento from '@/assets/iconos-cards/24Recurso 48.png'
 import tarjetas from '@/assets/tarjetas.webp'
 import { cn } from '@/shared/lib/cn'
 
@@ -13,9 +18,11 @@ const slowReveal = {
 const cards = [
   {
     title: 'Capital',
-    description: 'Suministramos los recursos',
+    icon: iconCapital,
+    iconClassName: 'right-5 top-5',
+    description: '',
     overlayDescription:
-      'Suministro inteligente de recursos para potenciar operaciones de alto impacto. Integramos capital, liquidez y tecnología para garantizar el acceso oportuno a los recursos que impulsan el crecimiento sostenible del ecosistema agrominero.',
+      'Donde los recursos se articulan inteligentemente para impulsar operaciones de alto impacto que ayuden al crecimiento del ecosistema minero.',
     className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
       'bottom-1 left-7 text-[4.15rem] tracking-[-0.08em] lg:text-[4.7rem]',
@@ -26,10 +33,11 @@ const cards = [
   },
   {
     title: 'Tech',
-    description:
-      'Tarjetas corporativas y control del gasto operativo.',
+    icon: iconTech,
+    iconClassName: 'bottom-5 left-5',
+    description: '',
     overlayDescription:
-      'Diseñamos soluciones financieras que convierten la dinámica de tu operación en acceso a liquidez. A través de créditos, microcréditos y tarjetas inteligentes especializadas, impulsamos el crecimiento de empresas y personas que hacen parte del ecosistema minero.',
+      'Donde la inteligencia colectiva transforma el ecosistema minero en una red viva de valor y oportunidades. Transformamos la operación minera en acceso a liquidez y soluciones reales. En nuestro Hub conectamos créditos, pagos, rieles financieros y partners que activan el flujo del ecosistema minero y potencian a quienes lo construyen cada día en territorio.',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
       'left-6 top-5 text-[4.2rem] tracking-[-0.08em] lg:text-[5rem]',
@@ -41,8 +49,9 @@ const cards = [
   },
   {
     title: 'Secure',
-    description:
-      'Operamos con confianza. Crecemos con cumplimiento.',
+    icon: iconSecure,
+    iconClassName: 'left-5 top-5',
+    description: '',
     overlayDescription:
       'Manejamos una plataforma que integra control, trazabilidad y cumplimiento normativo para garantizar operaciones seguras, transparentes y preparadas para escalar en un entorno cada vez más exigente.',
     className: 'min-h-[12rem] lg:min-h-0',
@@ -54,10 +63,11 @@ const cards = [
   },
   {
     title: 'MOVI\nMIENTO',
-    description:
-      'Convertimos la visión en acción.',
+    icon: iconMovimiento,
+    iconClassName: 'bottom-5 right-5',
+    description: '',
     overlayDescription:
-      'Impulsamos la gestión y ejecución de proyectos estratégicos mediante un modelo que integra recursos, tecnología y acompañamiento especializado para acelerar resultados y generar impacto sostenible.',
+      'Un laboratorio vivo de innovación para el ecosistema minero. Aquí no imaginamos el futuro. Lo construimos, lo probamos y lo activamos.',
     className: 'min-h-[11.8rem] justify-end lg:min-h-0',
     titleClassName:
       'left-5 top-5 whitespace-pre-line text-[3.75rem] leading-[0.9] tracking-[-0.08em] lg:text-[4.55rem]',
@@ -67,8 +77,15 @@ const cards = [
 ]
 
 export function HomeIndustrialGridSection() {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const iconRotate = useTransform(scrollYProgress, [0, 1], [0, 360])
+
   return (
-    <section className="bg-[#f7f5f2] py-16 sm:py-20 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8">
+    <section ref={sectionRef} className="bg-[#f7f5f2] py-16 sm:py-20 lg:h-screen lg:max-h-screen lg:overflow-hidden lg:py-8">
       <div className="mx-auto flex w-full max-w-[1110px] flex-col px-5 sm:px-6 lg:h-full lg:px-0">
         <motion.h2
           initial={{ opacity: 0, y: 36 }}
@@ -82,13 +99,13 @@ export function HomeIndustrialGridSection() {
 
         <div className="mt-8 grid gap-4 lg:min-h-0 lg:flex-1 lg:grid-cols-[1fr_1fr]">
           <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.3fr_0.7fr]">
-            <ServiceGhostCard {...cards[0]} delay={0.06} />
-            <ServiceGhostCard {...cards[1]} delay={0.16} />
+            <ServiceGhostCard {...cards[0]} delay={0.06} iconRotate={iconRotate} />
+            <ServiceGhostCard {...cards[1]} delay={0.16} iconRotate={iconRotate} />
           </div>
 
           <div className="grid gap-4 lg:min-h-0 lg:grid-rows-[0.45fr_0.55fr]">
-            <ServiceGhostCard {...cards[2]} delay={0.22} />
-            <ServiceGhostCard {...cards[3]} delay={0.34} />
+            <ServiceGhostCard {...cards[2]} delay={0.22} iconRotate={iconRotate} />
+            <ServiceGhostCard {...cards[3]} delay={0.34} iconRotate={iconRotate} />
           </div>
         </div>
 
@@ -133,12 +150,12 @@ export function HomeIndustrialGridSection() {
 
 type ServiceGhostCardProps = {
   title: string
-  description: string
+  icon: string
+  iconClassName?: string
+  iconRotate: MotionValue<number>
   overlayDescription?: string
   className: string
   titleClassName: string
-  contentClassName: string
-  descriptionClassName?: string
   hasCardsImage?: boolean
   isMotionCard?: boolean
   isTechCard?: boolean
@@ -147,12 +164,12 @@ type ServiceGhostCardProps = {
 
 function ServiceGhostCard({
   title,
-  description,
+  icon,
+  iconClassName,
+  iconRotate,
   overlayDescription,
   className,
   titleClassName,
-  contentClassName,
-  descriptionClassName,
   hasCardsImage = false,
   isMotionCard = false,
   isTechCard = false,
@@ -181,45 +198,30 @@ function ServiceGhostCard({
         {title}
       </span>
 
+      <motion.img
+        src={icon}
+        alt=""
+        aria-hidden="true"
+        style={{ rotate: iconRotate }}
+        className={cn(
+          'pointer-events-none absolute z-10 h-12 w-12 object-contain opacity-75 mix-blend-multiply sm:h-14 sm:w-14',
+          iconClassName,
+        )}
+      />
+
       {isTechCard ? (
         <div className="relative z-10 h-full min-h-[27rem] lg:min-h-0">
-          <div className="absolute left-[12.9rem] right-5 top-[4.45rem] max-w-[16.8rem] text-left sm:left-[14.8rem] lg:left-[15.6rem] lg:top-[4.25rem]">
-            <p
-              className={cn(
-                'font-sans text-[#292322]',
-                descriptionClassName ??
-                  'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-              )}
-            >
-              {description}
-            </p>
-          </div>
-
           <img
             src={tarjetas}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[6.1rem] w-[15.4rem] max-w-[72%] -translate-x-1/2 lg:top-[5.25rem] lg:w-[16.2rem]"
+            className="pointer-events-none absolute left-1/2 top-[12.2rem] w-[15.2rem] max-w-[76%] -translate-x-1/2 sm:top-[6.1rem] sm:w-[15.4rem] sm:max-w-[72%] lg:top-[5.25rem] lg:w-[16.2rem]"
           />
         </div>
       ) : isMotionCard ? (
-        <div className="absolute bottom-5 left-6 right-6 z-10 max-w-[17rem]">
-          <p className="font-sans text-[0.88rem] font-bold leading-[1.12] tracking-[-0.025em] text-[#292322] sm:text-[0.94rem] lg:text-[0.84rem]">
-            {description}
-          </p>
-        </div>
+        null
       ) : (
-        <div className={cn('relative z-10', contentClassName)}>
-          <p
-            className={cn(
-              'font-sans text-[#292322]',
-              descriptionClassName ??
-                'text-[0.98rem] font-extrabold leading-[0.94] tracking-[-0.04em] sm:text-[1.08rem] lg:text-[0.92rem]',
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        null
       )}
 
       {hasCardsImage && !isTechCard ? (
@@ -232,8 +234,8 @@ function ServiceGhostCard({
       ) : null}
 
       {overlayDescription ? (
-        <div className="absolute inset-0 z-20 flex items-center rounded-[1.8rem] bg-[#2b201b]/92 px-6 py-6 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100 sm:px-8 sm:py-7">
-          <p className="max-h-full w-full overflow-y-auto pr-1 font-sans text-[0.92rem] font-bold leading-[1.24] tracking-[-0.035em] text-[#f7f5f2] sm:text-[1.02rem] lg:text-[0.95rem] xl:text-[1rem]">
+        <div className="absolute inset-0 z-20 flex items-center overflow-hidden rounded-[1.8rem] bg-[linear-gradient(135deg,rgba(118,47,15,0.95)_0%,rgba(184,82,29,0.94)_42%,rgba(225,144,84,0.92)_100%)] px-6 py-6 opacity-0 backdrop-blur-[2px] transition duration-300 ease-out group-hover:opacity-100 group-focus:opacity-100 sm:px-8 sm:py-7">
+          <p className="max-h-full w-full overflow-hidden font-sans text-[0.84rem] font-extrabold leading-[1.13] tracking-[-0.04em] text-white sm:text-[0.94rem] lg:text-[clamp(0.76rem,0.92vw,0.98rem)] xl:text-[1rem]">
             {overlayDescription}
           </p>
         </div>

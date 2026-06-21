@@ -69,7 +69,7 @@ export function HomeHeroSection() {
             initial={{ opacity: 0, x: -48 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.15, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans text-[2.8rem] font-extrabold leading-[0.96] tracking-[-0.06em] text-white sm:text-[3.55rem] lg:text-[4.2rem]"
+            className="font-sans text-[2.8rem] font-extrabold leading-[1.04] tracking-[-0.06em] text-white sm:text-[3.55rem] sm:leading-[0.96] lg:text-[4.2rem]"
           >
             <span className="block">Para que todo</span>
             <span className="block">

@@ -74,6 +74,10 @@ export function HomeSocialImpactSection() {
               </Link>
             </div>
 
+            <span className="pointer-events-none absolute bottom-[-1.05rem] left-1/2 z-10 -translate-x-1/2 font-sans text-[4.3rem] font-extrabold uppercase leading-none tracking-[-0.08em] text-white/28 sm:text-[5.1rem] lg:text-[5.55rem]">
+              ROOT
+            </span>
+
             <div className="pointer-events-none absolute bottom-0 right-[-2%] z-20 w-[49%]">
               <img
                 src={manoResponsabilidad}
