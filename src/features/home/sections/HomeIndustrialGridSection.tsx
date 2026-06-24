@@ -19,7 +19,7 @@ const cards = [
   {
     title: 'Capital',
     icon: iconCapital,
-    iconClassName: 'right-5 top-5',
+    iconClassName: 'right-[-3.1rem] top-[-3rem] h-32 w-32 opacity-30 sm:h-40 sm:w-40',
     description: '',
     overlayDescription:
       'Donde los recursos se articulan inteligentemente para impulsar operaciones de alto impacto que ayuden al crecimiento del ecosistema minero.',
@@ -34,7 +34,7 @@ const cards = [
   {
     title: 'Tech',
     icon: iconTech,
-    iconClassName: 'bottom-5 left-5',
+    iconClassName: 'bottom-[-4.5rem] right-[-4.25rem] h-44 w-44 opacity-30 sm:h-52 sm:w-52',
     description: '',
     overlayDescription:
       'Donde la inteligencia colectiva transforma el ecosistema minero en una red viva de valor y oportunidades. Transformamos la operación minera en acceso a liquidez y soluciones reales. En nuestro Hub conectamos créditos, pagos, rieles financieros y partners que activan el flujo del ecosistema minero y potencian a quienes lo construyen cada día en territorio.',
@@ -50,7 +50,7 @@ const cards = [
   {
     title: 'Secure',
     icon: iconSecure,
-    iconClassName: 'left-5 top-5',
+    iconClassName: 'right-[-2.7rem] top-[-2.6rem] h-28 w-28 opacity-30 sm:h-32 sm:w-32',
     description: '',
     overlayDescription:
       'Manejamos una plataforma que integra control, trazabilidad y cumplimiento normativo para garantizar operaciones seguras, transparentes y preparadas para escalar en un entorno cada vez más exigente.',
@@ -64,7 +64,7 @@ const cards = [
   {
     title: 'MOVI\nMIENTO',
     icon: iconMovimiento,
-    iconClassName: 'bottom-5 right-5',
+    iconClassName: 'bottom-[-3.6rem] right-[-3.4rem] h-36 w-36 opacity-30 sm:h-44 sm:w-44',
     description: '',
     overlayDescription:
       'Un laboratorio vivo de innovación para el ecosistema minero. Aquí no imaginamos el futuro. Lo construimos, lo probamos y lo activamos.',
@@ -204,7 +204,7 @@ function ServiceGhostCard({
         aria-hidden="true"
         style={{ rotate: iconRotate }}
         className={cn(
-          'pointer-events-none absolute z-10 h-12 w-12 object-contain opacity-75 mix-blend-multiply sm:h-14 sm:w-14',
+          'pointer-events-none absolute z-10 object-contain mix-blend-multiply',
           iconClassName,
         )}
       />

@@ -2,10 +2,10 @@ import { useRef } from 'react'
 import { motion, type MotionValue, useScroll, useTransform } from 'motion/react'
 import { Link } from 'react-router-dom'
 import fondoGeometrico from '@/assets/figurageometricas-porque.webp'
-import iconCumplimiento from '@/assets/iconos-cards/12Recurso 36.png'
-import iconLogistica from '@/assets/iconos-cards/12Recurso 12.png'
-import iconTecnologia from '@/assets/iconos-cards/12Recurso 24.png'
-import iconOperacion from '@/assets/iconos-cards/24Recurso 48.png'
+import iconOperacion from '@/assets/iconos-cards/23Recurso 47 (1).png'
+import iconTecnologia from '@/assets/iconos-cards/11Recurso 23.png'
+import iconLogistica from '@/assets/iconos-cards/11Recurso 11 (1).png'
+import iconCumplimiento from '@/assets/iconos-cards/11Recurso 35 (1).png'
 import { cn } from '@/shared/lib/cn'
 
 const viewport = { once: true, amount: 0.28 }
@@ -18,7 +18,7 @@ const cards = [
   {
     title: 'Operación',
     icon: iconOperacion,
-    iconClassName: 'right-5 top-5',
+    iconClassName: 'right-[-2.7rem] top-[-2.6rem] h-28 w-28 opacity-45 sm:h-32 sm:w-32',
     className: 'min-h-[13rem] lg:min-h-0',
     titleClassName:
       'bottom-1 left-7 text-[3.35rem] tracking-[-0.08em] sm:text-[4.15rem] lg:text-[4.7rem]',
@@ -26,7 +26,7 @@ const cards = [
   {
     title: 'Tecnología',
     icon: iconTecnologia,
-    iconClassName: 'bottom-5 right-5',
+    iconClassName: 'bottom-[-3.6rem] right-[-3.4rem] h-36 w-36 opacity-42 sm:h-44 sm:w-44',
     className: 'min-h-[17rem] lg:min-h-0',
     titleClassName:
       'left-6 top-5 text-[3.05rem] tracking-[-0.08em] sm:text-[4.2rem] lg:text-[4.65rem]',
@@ -34,7 +34,7 @@ const cards = [
   {
     title: 'Logística',
     icon: iconLogistica,
-    iconClassName: 'bottom-5 left-5',
+    iconClassName: 'right-[-4.5rem] top-[-4.25rem] h-44 w-44 opacity-44 sm:h-52 sm:w-52',
     className: 'min-h-[32rem] overflow-hidden lg:min-h-0',
     titleClassName:
       'left-4 top-1/2 -translate-y-1/2 text-[3rem] tracking-[-0.08em] [writing-mode:vertical-rl] [text-orientation:mixed] sm:text-[3.45rem] lg:text-[4.25rem]',
@@ -42,7 +42,7 @@ const cards = [
   {
     title: 'Cumplimiento',
     icon: iconCumplimiento,
-    iconClassName: 'left-5 top-5',
+    iconClassName: 'left-[-3.1rem] top-[-3rem] h-32 w-32 opacity-43 sm:h-40 sm:w-40',
     className: 'min-h-[12rem] lg:min-h-0',
     titleClassName:
       'bottom-1 right-5 text-[2.45rem] tracking-[-0.08em] sm:text-[3.25rem] lg:text-[3.85rem]',
@@ -168,7 +168,7 @@ function ServiceGhostCard({
         aria-hidden="true"
         style={{ rotate: iconRotate }}
         className={cn(
-          'pointer-events-none absolute z-10 h-12 w-12 object-contain opacity-75 mix-blend-multiply sm:h-14 sm:w-14',
+          'pointer-events-none absolute z-10 object-contain mix-blend-multiply',
           iconClassName,
         )}
       />
