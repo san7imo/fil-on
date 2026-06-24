@@ -74,7 +74,7 @@ export function HomeSocialImpactSection() {
               </Link>
             </div>
 
-            <span className="pointer-events-none absolute bottom-[-1.05rem] left-1/2 z-10 -translate-x-1/2 font-sans text-[4.3rem] font-extrabold uppercase leading-none tracking-[-0.08em] text-white/28 sm:text-[5.1rem] lg:text-[5.55rem]">
+            <span className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 font-sans text-[3.8rem] font-extrabold uppercase leading-none tracking-[-0.08em] text-white/28 sm:bottom-1 sm:text-[5.1rem] lg:bottom-[-0.15rem] lg:text-[5.55rem]">
               ROOT
             </span>
 

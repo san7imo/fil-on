@@ -13,17 +13,17 @@ const socialLinks = [
   {
     name: 'Facebook',
     Icon: FaFacebook,
-    href: 'https://facebook.com/fil-ontech',
+    href: siteConfig.social.facebook,
   },
   {
     name: 'Instagram',
     Icon: FaInstagram,
-    href: 'https://instagram.com/fil-ontech',
+    href: siteConfig.social.instagram,
   },
   {
     name: 'LinkedIn',
     Icon: FaLinkedin,
-    href: 'https://linkedin.com/company/fil-ontech',
+    href: siteConfig.social.linkedin,
   },
 ]
 

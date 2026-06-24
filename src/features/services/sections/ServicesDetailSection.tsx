@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { cn } from '@/shared/lib/cn'
 
 const viewport = { once: true, amount: 0.24 }
 const reveal = {
@@ -9,7 +10,9 @@ const reveal = {
 const services = [
   {
     label: 'Capital',
-    title: 'Pagos y gestión digital.',
+    title: 'Abastecimiento, ejecución y logística operativa en territorio y digital.',
+    titleClassName:
+      'max-w-[31rem] text-[1.32rem] leading-[1.02] sm:text-[1.58rem] lg:text-[1.52rem]',
     description:
       'Herramientas para dispersar recursos, pagar y gestionar operación.',
     capabilities: ['Dispersión', 'Pasarela de pagos', 'Servicios digitales'],
@@ -78,7 +81,13 @@ export function ServicesDetailSection() {
                     <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-white/62">
                       {service.label}
                     </p>
-                    <h3 className="mt-3 max-w-[18rem] font-sans text-[1.55rem] font-extrabold leading-[0.98] tracking-[-0.05em] text-white sm:text-[1.8rem]">
+                    <h3
+                      className={cn(
+                        'mt-3 font-sans font-extrabold tracking-[-0.05em] text-white',
+                        service.titleClassName ??
+                          'max-w-[18rem] text-[1.55rem] leading-[0.98] sm:text-[1.8rem]',
+                      )}
+                    >
                       {service.title}
                     </h3>
                   </div>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import fondoHeroFooter from '@/assets/fondoheroyfooter.webp'
 import logoFil from '@/assets/logofil.webp'
@@ -10,6 +11,11 @@ export function SiteFooter() {
   const serviceLinks = [
     { label: 'Fil-On Tech', href: '/servicios', external: false },
     { label: 'Fil-On Secure', href: 'https://fil-onsecure.com/', external: true },
+  ]
+  const socialLinks = [
+    { label: 'Facebook', href: siteConfig.social.facebook, Icon: FaFacebook },
+    { label: 'Instagram', href: siteConfig.social.instagram, Icon: FaInstagram },
+    { label: 'LinkedIn', href: siteConfig.social.linkedin, Icon: FaLinkedin },
   ]
 
   return (
@@ -90,6 +96,27 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-8">
+              <h3 className="mb-4 text-[1.35rem] font-semibold tracking-[-0.04em] text-black">
+                Redes sociales
+              </h3>
+              <div className="flex items-center gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    title={social.label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-black/14 bg-white/38 text-[#23401d] transition hover:-translate-y-0.5 hover:border-[#d67b45]/48 hover:bg-white/58 hover:text-[#8f4a22]"
+                  >
+                    <social.Icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
         </div>
